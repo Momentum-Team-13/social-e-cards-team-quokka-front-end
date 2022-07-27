@@ -1,4 +1,7 @@
-/* Add a black background color to the top navigation */
+
+
+
+/* Add a black background color to the top navigation
 
 
 .navbar {
@@ -7,7 +10,7 @@
   }
   
   /* Style the links inside the navigation bar */
-  .navbar button {
+  /* .navbar button {
     float: left;
     color: white;
     text-align: center;
@@ -17,18 +20,18 @@
   }
   
   /* Change the color of links on hover */
-  .navbar button:hover {
+  /* .navbar button:hover {
     background-color: white;
     color: black;
-  }
+  } */
   
   /* Add a color to the active/current link */
-  .navbar button.active {
+  /* .navbar button.active {
     background-color: white;
     color: white;
-  }
+  } */
 
-  .navbar button:visited {
+  /* .navbar button:visited {
     text-decoration: none;
     color: black;
-  }
+  } */ 
