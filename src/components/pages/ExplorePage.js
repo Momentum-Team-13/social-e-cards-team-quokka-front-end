@@ -1,7 +1,14 @@
-import cards from '../../sample-card-data'
+import Card from '../card/Card.js'
+import data from '../../sample-card-data'
 
-export default function Explore() {
+export default function Explore({info}) {
     return (
-        <div>Explore page div</div>
+        <>
+            <div className="explore-container">
+            {data.map((info) => (
+                    <Card key={info.id} info={info}/>
+                ))}
+            </div>
+        </>
     )
 }

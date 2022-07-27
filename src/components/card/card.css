@@ -1,0 +1,18 @@
+.card-container {
+    border: solid black 2px;
+    height: 350px;
+    width: 500px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    background-color: lightblue
+}
+
+.card-title {
+    margin-top: 20px;
+    position: absolute
+}
+
+.card-message {
+    margin-top: 150px;
+}
