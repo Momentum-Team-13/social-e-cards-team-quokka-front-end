@@ -125,22 +125,22 @@ function Card() {
         },
     ];
 
-    const cardOne = cards[0];
-
     return (
         <div>
             <h1>Cards</h1>
+            {cards.map((card) => 
             <div className="card">
-                <div className={`card-content bg-${cardOne.bg_color} border-${cardOne.border_color}`}>
-                    <div className={`${cardOne.font_color} ${cardOne.font}`}>
-                        {cardOne.title}
+                <div className={`card-content bg-${card.bg_color} border-${card.border_color}`}>
+                    <div className={`${card.font_color} ${card.font}`}>
+                        {card.title}
                     </div>
-                    <div className={`${cardOne.font_color} ${cardOne.font}`}>
-                        {cardOne.message}
+                    <div className={`${card.font_color} ${card.font}`}>
+                        {card.message}
                     </div>
                 </div>
-                <div>Author: {cardOne.user_id}</div>
+                <div>Author: {card.user_id}</div>
             </div>
+                )}
         </div>
     );
 }
