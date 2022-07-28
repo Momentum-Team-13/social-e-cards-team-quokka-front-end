@@ -4,6 +4,7 @@ import Views from './views'
 import { BrowserRouter } from 'react-router-dom'
 import LogIn from './components/pages/logInPage/LogInPage'
 import Register from './components/pages/registerPage/RegisterPage'
+import 'bulma/css/bulma.min.css';
 
 
 
