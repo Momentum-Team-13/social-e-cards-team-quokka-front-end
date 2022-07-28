@@ -1,8 +1,12 @@
 import cards from '../../../sample-card-data'
-
+import { useState, useRef } from 'react'
+import { PreviewForm } from '../../createCard/CreateCard'
 export default function NewCard() {
     return (
-        <div>New Card Div</div>
-        
+        <div>
+            <PreviewForm></PreviewForm>
+
+        </div>
+
     )
 }

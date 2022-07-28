@@ -10,6 +10,16 @@
   margin: 10px;
 }
 
+.previewBox {
+  display: flex;
+  flex-direction: row;
+}
+
+.messageBox {
+  word-break: break-all;
+
+}
+
 
 
 /* CLASSES FROM API */
@@ -19,7 +29,7 @@
 }
 
 .kaushan {
-  font-family:'Kaushan Script', cursive;
+  font-family: 'Kaushan Script', cursive;
 }
 
 .amatic {
@@ -57,18 +67,19 @@
 }
 
 .red {
-  color:red;
+  color: red;
 }
 
-.black{
+.black {
   color: black;
 }
 
 .blue {
   color: blue;
 }
+
 .green {
-  color:green;
+  color: green;
 }
 
 .yellow {
@@ -84,7 +95,7 @@
 }
 
 .brown {
-  color:brown;
+  color: brown;
 }
 
 
@@ -131,27 +142,35 @@
 .border-black {
   border: 2px black solid;
 }
+
 .border-white {
   border: 2px white solid;
 }
+
 .border-red {
   border: 2px red solid;
 }
+
 .border-blue {
   border: 2px blue solid;
 }
+
 .border-green {
   border: 2px green solid;
 }
+
 .border-yellow {
   border: 2px yellow solid;
 }
+
 .border-orange {
   border: 2px orange solid;
 }
+
 .border-purple {
   border: 2px purple solid;
 }
+
 .border-brown {
   border: 2px brown solid;
 }
