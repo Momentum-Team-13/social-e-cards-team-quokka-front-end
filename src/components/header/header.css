@@ -1,13 +1,14 @@
 .header {
   border: 2px pink solid;
   height: 13rem;
-  display: flex;
   flex-direction: column;
+  display: flex;
   /* justify-content: center; */
   /* align-items: center; */
 }
 
 .app-title {
+  /* font-family:'Bungee Shade', cursive; */
   border: 2px yellow solid;
   height: 9rem;
   /* line-height: 9rem;
