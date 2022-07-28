@@ -1,9 +1,9 @@
 import { Route, Routes } from "react-router-dom";
-import Home from './components/pages/Home'
-import NewCard from './components/pages/NewCardPage'
-import MyCards from './components/pages/MyCardsPage'
-import Explore from './components/pages/ExplorePage'
-import UserCards from './components/pages/UserCardsPage'
+import Home from './components/pages/homePage/HomePage'
+import NewCard from './components/pages/newCardPage/NewCardPage'
+import MyCards from './components/pages/myCardsPage/MyCardsPage'
+import Explore from './components/pages/explorePage/ExplorePage'
+import UserCards from './components/pages/userCardsPage/UserCardsPage'
 
 export default function Views() {
   return (

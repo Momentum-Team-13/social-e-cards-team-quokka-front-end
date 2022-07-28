@@ -1,4 +1,4 @@
-import cards from '../../sample-card-data'
+import cards from '../../../sample-card-data'
 import { useParams } from "react-router-dom"
 
 export default function UserCards() {
