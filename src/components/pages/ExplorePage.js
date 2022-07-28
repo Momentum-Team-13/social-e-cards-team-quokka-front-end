@@ -2,6 +2,9 @@ import cards from '../../sample-card-data'
 
 export default function Explore() {
     return (
-        <div>Explore page div</div>
+        <div>
+            <h1>Explore page div</h1>
+            <Card />
+        </div>
     )
 }

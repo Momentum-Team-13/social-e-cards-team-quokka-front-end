@@ -139,6 +139,7 @@ function Card() {
                     </div>
                 </div>
                 <div>Author: {card.user_id}</div>
+                {/* add profile link to user */}
             </div>
                 )}
         </div>
