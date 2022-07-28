@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 // import cards from '../../sample-card-data'
 
 function Card() {
@@ -129,7 +130,9 @@ function Card() {
         <div>
             <h1>Cards</h1>
             {cards.map((card) =>
+
                 <div className="card messageBox" >
+
                     <div className={`card-content bg-${card.bg_color} border-${card.border_color}`}>
                         <div className={`${card.font_color} ${card.font}`}>
                             {card.title}
@@ -138,7 +141,9 @@ function Card() {
                             {card.message}
                         </div>
                     </div>
-                    <div>Author: {card.user_id}</div>
+
+                    <Link to={`/user/${card.user_id}`} className="btn btn-primary">Author: {card.user_id}</Link>
+
                     {/* add profile link to user */}
                 </div>
             )}
