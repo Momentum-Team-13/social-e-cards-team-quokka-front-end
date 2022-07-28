@@ -128,7 +128,7 @@ function Card() {
 
     return (
         <div>
-            <h1>Cards</h1>
+            <div className="card-list">
             {cards.map((card) =>
                 <div className="card">
                     <div className={`card-content bg-${card.bg_color} border-${card.border_color}`}>
@@ -143,6 +143,7 @@ function Card() {
                     {/* add profile link to user */}
                 </div>
             )}
+            </div>
         </div>
     );
 }
