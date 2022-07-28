@@ -128,7 +128,7 @@ function Card() {
 
     return (
         <div>
-            <h1>Cards</h1>
+            <div className="card-list">
             {cards.map((card) =>
 
                 <div className="card messageBox" >
@@ -147,6 +147,7 @@ function Card() {
                     {/* add profile link to user */}
                 </div>
             )}
+            </div>
         </div>
     );
 }
