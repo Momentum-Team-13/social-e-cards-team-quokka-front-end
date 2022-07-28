@@ -8,6 +8,9 @@ border: 2px green solid;
 .card-text {
     padding:1.5rem;
 }
+.card-title {
+    font-size: 2rem;
+}
 
 /* CLASSES FROM API */
 /* Fonts */
