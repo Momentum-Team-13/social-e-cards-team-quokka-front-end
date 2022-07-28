@@ -1,11 +1,12 @@
+
 const cards = [
     {
         "user_id": "user1", 
         // created_at = , 
         "title": "Title 1", 
         "message": "Message 1: I have some things to say", 
-        "font": "font-family: 'Cormorant Unicase', serif;", 
-        "font_color": "black", 
+        "font": "cormorant", 
+        "font_color": "purple", 
         "bg_color": "white", 
         "border_color": "black", 
         "border_style": "solid", 
