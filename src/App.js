@@ -10,7 +10,8 @@ import Register from './components/pages/registerPage/RegisterPage'
 function App() {
   return (
     <BrowserRouter>
-      {/* <Register /> */}
+      {/* <LogIn />
+      <Register /> */}
       <Header />
       <Views />
     </BrowserRouter>
