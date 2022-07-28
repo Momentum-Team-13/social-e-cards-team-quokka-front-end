@@ -6,6 +6,10 @@ margin: 25px;
 border: 2px green solid;
 }
 
+.card-text{
+    padding: 1.5rem;
+}
+
 /* CLASSES FROM API */
 /* Fonts */
 .cormorant {
