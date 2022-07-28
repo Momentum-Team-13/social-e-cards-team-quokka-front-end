@@ -1,4 +1,4 @@
-import cards from '../../sample-card-data'
+import cards from '../../../sample-card-data'
 
 export default function MyCard() {
     return (
