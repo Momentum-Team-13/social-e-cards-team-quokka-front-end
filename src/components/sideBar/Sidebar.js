@@ -4,20 +4,16 @@ export default function Sidebar() {
     return(
     <div className="container">
         <div className="sidebar">Sidebar
-            <div>Username</div>
-            <div>Username</div>
-            <div>Username</div>
-            <div>Username</div>
-            <div>Username</div>
-            <div>Username</div>
-            <div>Username</div>
-            <div>Username</div>
-            <div>Username</div>
-            <div>Username</div>
-            <div>Username</div>
-            <div>Username</div>
-            <div>Username</div>
-            <div>Username</div>
+            <div className="list">Username</div>
+            <div className="list">Username</div>
+            <div className="list">Username</div>
+            <div className="list">Username</div>
+            <div className="list">Username</div>
+            <div className="list">Username</div>
+            <div className="list">Username</div>
+            <div className="list">Username</div>
+            <div className="list">Username</div>
+            <div className="list">Username</div>
         </div>
     </div>
     )
