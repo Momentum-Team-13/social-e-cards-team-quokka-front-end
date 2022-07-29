@@ -38,9 +38,8 @@ export const PreviewForm = () => {
 
     return (
         <div>
-            <h1>Preview</h1>
             <div className="previewBox">
-                <div>
+                <div className="options">
                     <div className="input-field">
                         <label>Title</label>
                         <br></br>
@@ -66,96 +65,102 @@ export const PreviewForm = () => {
                         </div>
                     </div>
 
-                    <div className="dropdown">
-                        <label for="Color">Border Color:</label>
-                        <br></br>
-                        <select
-                            className="select"
-                            onChange={handleChangeBorderColor}
-                            value={borderColor}
-                            id="color"
-                            name="color"
-                        >
-                            <option value="white">White</option>
-                            <option value="black">Black</option>
-                            <option value="red">Red</option>
-                            <option value="blue">Blue</option>
-                            <option value="green">Green</option>
-                            <option value="yellow">Yellow</option>
-                            <option value="orange">Orange</option>
-                            <option value="purple">Purple</option>
-                            <option value="brown">Brown</option>
-                        </select>
-                    </div>
+                    <div className="dropdown-box">
+                        <div className="dropdown">
+                            <label for="Color">Border Color:</label>
+                            <br></br>
+                            <select
+                                className="select"
+                                onChange={handleChangeBorderColor}
+                                value={borderColor}
+                                id="color"
+                                name="color"
+                            >
+                                <option value="white">White</option>
+                                <option value="black">Black</option>
+                                <option value="red">Red</option>
+                                <option value="blue">Blue</option>
+                                <option value="green">Green</option>
+                                <option value="yellow">Yellow</option>
+                                <option value="orange">Orange</option>
+                                <option value="purple">Purple</option>
+                                <option value="brown">Brown</option>
+                            </select>
+                        </div>
 
-                    <div className="dropdown">
-                        <label for="Color">Font Color:</label>
-                        <br></br>
-                        <select
-                            className="select"
-                            onChange={handleChangeFontColor}
-                            value={fontColor}
-                            id="color"
-                            name="color"
-                        >
-                            <option value="black">Black</option>
-                            <option value="white">White</option>
-                            <option value="red">Red</option>
-                            <option value="blue">Blue</option>
-                            <option value="green">Green</option>
-                            <option value="yellow">Yellow</option>
-                            <option value="orange">Orange</option>
-                            <option value="purple">Purple</option>
-                            <option value="brown">Brown</option>
-                        </select>
-                        <br></br>
-                    </div>
-                    <div className="dropdown">
-                        <label for="Color">Background Color:</label>
-                        <br></br>
-                        <select
-                            className="select"
-                            onChange={handleChangeBgColor}
-                            value={bgColor}
-                            id="color"
-                            name="color"
-                        >
-                            <option value="white">White</option>
-                            <option value="black">Black</option>
-                            <option value="red">Red</option>
-                            <option value="blue">Blue</option>
-                            <option value="green">Green</option>
-                            <option value="yellow">Yellow</option>
-                            <option value="orange">Orange</option>
-                            <option value="purple">Purple</option>
-                            <option value="brown">Brown</option>
-                        </select>
-                        <br></br>
-                    </div>
+                        <div className="dropdown">
+                            <label for="Color">Font Color:</label>
+                            <br></br>
+                            <select
+                                className="select"
+                                onChange={handleChangeFontColor}
+                                value={fontColor}
+                                id="color"
+                                name="color"
+                            >
+                                <option value="black">Black</option>
+                                <option value="white">White</option>
+                                <option value="red">Red</option>
+                                <option value="blue">Blue</option>
+                                <option value="green">Green</option>
+                                <option value="yellow">Yellow</option>
+                                <option value="orange">Orange</option>
+                                <option value="purple">Purple</option>
+                                <option value="brown">Brown</option>
+                            </select>
+                            <br></br>
+                        </div>
 
-                    <div className="dropdown">
-                        <label for="Color">Font:</label>
-                        <br></br>
-                        <select
-                            className="select"
-                            onChange={handleChangeFont}
-                            value={font}
-                            id="font"
-                            name="font"
-                        >
-                            <option value="roboto">Roboto</option>
-                            <option value="spectral">Spectral</option>
-                            <option value="dancing">Dancing</option>
-                            <option value="julius">Julius</option>
-                            <option value="righteous">Righteous</option>
-                            <option value="bungee">Bungee</option>
-                            <option value="amatic">Amatic</option>
-                            <option value="kaushan">Kaushan</option>
-                            <option value="cormorant">Cormorant</option>
-                        </select>
+                        <div className="dropdown">
+                            <label for="Color">Background Color:</label>
+                            <br></br>
+                            <select
+                                className="select"
+                                onChange={handleChangeBgColor}
+                                value={bgColor}
+                                id="color"
+                                name="color"
+                            >
+                                <option value="white">White</option>
+                                <option value="black">Black</option>
+                                <option value="red">Red</option>
+                                <option value="blue">Blue</option>
+                                <option value="green">Green</option>
+                                <option value="yellow">Yellow</option>
+                                <option value="orange">Orange</option>
+                                <option value="purple">Purple</option>
+                                <option value="brown">Brown</option>
+                            </select>
+                            <br></br>
+                        </div>
+
+                        <div className="dropdown">
+                            <label for="Color">Font:</label>
+                            <br></br>
+                            <select
+                                className="select"
+                                onChange={handleChangeFont}
+                                value={font}
+                                id="font"
+                                name="font"
+                            >
+                                <option value="roboto">Roboto</option>
+                                <option value="spectral">Spectral</option>
+                                <option value="dancing">Dancing</option>
+                                <option value="julius">Julius</option>
+                                <option value="righteous">Righteous</option>
+                                <option value="bungee">Bungee</option>
+                                <option value="amatic">Amatic</option>
+                                <option value="kaushan">Kaushan</option>
+                                <option value="cormorant">Cormorant</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div>
+                        <button className="button submit">Submit</button>
                     </div>
                 </div>
-                <div>
+                <div className="preview">
                     <div className="card">
                         <div
                             className={`card-content bg-${bgColor} border-${borderColor}`}
@@ -170,9 +175,6 @@ export const PreviewForm = () => {
                     </div>
                 </div>
                 <br></br>
-            </div>
-            <div>
-                <button>Submit</button>
             </div>
         </div>
     );
