@@ -1,18 +1,22 @@
 .header {
   border: 2px pink solid;
-  height: 13rem;
-  display: flex;
+  /* height: 13rem; */
   flex-direction: column;
+  display: flex;
+  /* padding: 10px; */
+  margin-bottom: 5px;
   /* justify-content: center; */
   /* align-items: center; */
 }
 
 .app-title {
+  /* font-family:'Bungee Shade', cursive; */
   border: 2px yellow solid;
-  height: 9rem;
+  max-height: 9rem;
   /* line-height: 9rem;
   white-space: nowrap; */
-  padding: 0rem;
+  padding-top: 1rem;
+  padding-bottom: 4rem;
   align-self: center;
   font-size: 4rem;
 }
@@ -21,7 +25,6 @@
   border: 2px orange solid;
   justify-content: space-around;
   display: flex;
-
 }
 
 .sign-out {

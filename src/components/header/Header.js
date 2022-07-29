@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import "./header.css";
+import 'bulma/css/bulma.min.css';
+
 
 export default function Header({handleLogout}) {
     return (
