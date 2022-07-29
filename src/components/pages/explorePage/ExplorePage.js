@@ -7,6 +7,7 @@ import '../../sidebar/sidebar.css'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 
+
 export default function Explore() {
     const [cards, setCards] = useState([])
 
@@ -21,11 +22,9 @@ export default function Explore() {
     },[])
 
     return (
-        <>
-            <div className="container">
+        <div className="container">
             <Sidebar />
             <Card cards={cards}/>
-            </div>
-        </>
+        </div>    
     )
 }
