@@ -3,10 +3,11 @@ import "./header.css";
 import 'bulma/css/bulma.min.css';
 
 
-export default function Header() {
+export default function Header({handleLogout}) {
     return (
         <div className="header">
-            <button className="sign-out button is-small">Sign Out</button>
+            <button className="sign-out button is-small" onClick={handleLogout}>
+            <Link to={"/"}>Sign Out</Link></button>
             <div className="app-title">QUOKKA CARDS</div>
             <div className="nav">
                 <div className="">
