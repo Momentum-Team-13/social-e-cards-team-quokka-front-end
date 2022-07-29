@@ -5,15 +5,18 @@ import '../../card/card.css'
 import Sidebar from '../../sidebar/Sidebar'
 import '../../sidebar/sidebar.css'
 import axios from 'axios'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 
 export default function Explore() {
+    const [cards, setCards] = useState([])
+
     useEffect(() => {
         axios
-            .get('https://quokka-cards.herokuapp.com/users', {
+            .get('https://quokka-cards.herokuapp.com/cards', {
             })
             .then((res) => {
-                console.log(res)
+                console.log(res.data)
+                setCards(res.data)
             })
     },[])
 
@@ -21,7 +24,7 @@ export default function Explore() {
         <>
             <div className="container">
             <Sidebar />
-            <Card />
+            <Card cards={cards}/>
             </div>
         </>
     )
