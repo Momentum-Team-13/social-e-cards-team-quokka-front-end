@@ -15,7 +15,7 @@ export default function LogIn({setAuth}) {
     // when the form submits, make an ajax request to the login endpoint
     // capture the auth token in state
     axios
-      .post('https://drf-library-api.herokuapp.com/api/auth/token/login', {
+      .post('https://quokka-cards.herokuapp.com/api/auth/token/login', {
         username: username,
         password: password,
       })
