@@ -1,22 +1,38 @@
 import "./logInPage.css";
+import axios from 'axios'
 import { useState } from "react";
+import { Navigate } from 'react-router-dom'
 
-export default function LogIn({token}) {
+export default function LogIn({setAuth}) {
   const [username, setUsername] = useState();
   const [password, setPassword] = useState();
+  const [error, setError] = useState(null)
 
-  const handleUsername = (event) => {
-    setUsername(event.target.value);
-  };
-  const handlePassword = (event) => {
-    setPassword(event.target.value);
-  };
+  const handleSubmit = (event) => {
+    console.log(username, password)
+    event.preventDefault()
+    setError(null)
+    // when the form submits, make an ajax request to the login endpoint
+    // capture the auth token in state
+    axios
+      .post('https://drf-library-api.herokuapp.com/api/auth/token/login', {
+        username: username,
+        password: password,
+      })
+      .then((res) => {
+        const token = res.data.auth_token
+        setAuth(username, token)
+      })
+      .catch((error) => {
+        setError(error.message)
+      })
+  }
 
   return (
     <div className="logIn">
-      <form className="logInWrapper">
+      <form className="logInWrapper" onSubmit={handleSubmit}>
         <div className="logInLeft">
-          <h3 className="logo">QuakkaCards</h3>
+          <h3 className="logo">QuokkaCards</h3>
           <span className="logInDescription">
             The place to connect and share e-cards with friends.
           </span>
@@ -24,21 +40,18 @@ export default function LogIn({token}) {
         <div className="logInRight">
           <div className="logInBox">
             <input
-            //   onChange={handleUsername()}
               placeholder="Username"
               className="logInInput"
+              onChange={(e) => setUsername(e.target.value)}
             />
             <input
-            //   onChange={handlePassword()}
               type="password"
               placeholder="Password"
               className="logInInput"
+              onChange={(e) => setPassword(e.target.value)}
             />
-            <button className="logInButton">Log In</button>
+            <button type="submit" className="logInButton">Log In</button>
             <span className="logInForgot">Forgot Password?</span>
-            {/* <button className="registerButton">
-            <Link to={"/Register"}>hi</Link>
-            </button> */}
           </div>
         </div>
       </form>
