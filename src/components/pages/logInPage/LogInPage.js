@@ -1,7 +1,7 @@
 import "./logInPage.css";
 import axios from 'axios'
 import { useState } from "react";
-import { Navigate } from 'react-router-dom'
+// import { Navigate } from 'react-router-dom'
 
 export default function LogIn({setAuth}) {
   const [username, setUsername] = useState();
@@ -22,6 +22,8 @@ export default function LogIn({setAuth}) {
       .then((res) => {
         const token = res.data.auth_token
         setAuth(username, token)
+        // the following console.log is so that the variable error is used on the page and we stop getting warnings about unused variables so our app will deploy on Netlify
+        console.log(error)
       })
       .catch((error) => {
         setError(error.message)
