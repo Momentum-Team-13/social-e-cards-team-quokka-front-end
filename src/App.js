@@ -14,8 +14,8 @@ function App() {
   const [username, setUsername] = useLocalStorageState('quokkaUsername', '')
 
   const setAuth = (username, token) => {
-    setToken(token)
     setUsername(username)
+    setToken(token)
   }
 
   const isLoggedIn = username && token
