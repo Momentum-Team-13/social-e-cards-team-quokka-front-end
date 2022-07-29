@@ -1,9 +1,3 @@
-sidebar.css: 
-
-
-
-
-Sidebar.js: 
 import './sidebar.css'
 
 export default function Sidebar() {
