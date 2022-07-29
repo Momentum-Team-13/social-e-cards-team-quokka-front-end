@@ -70,13 +70,15 @@
 
 .registerButton{
     width: 75%;
-    height:50px;
-    align-self: center;
-    border-radius: 10px;
+    height:40px;
+    border-radius: 20px;
     border: none;
     background-color: rgb(65, 168, 205);
     font-size: 18px;
     font-weight: 500;
+    display:flex;
+    justify-content: center;
+    align-content:center;
     color: white;
     cursor: pointer
 }

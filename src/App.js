@@ -5,14 +5,21 @@ import { BrowserRouter } from 'react-router-dom'
 import LogIn from './components/pages/logInPage/LogInPage'
 import Register from './components/pages/registerPage/RegisterPage'
 import 'bulma/css/bulma.min.css';
+import { useState, useEffect } from 'react'
 
 
 
 function App() {
+  const [token, setToken] = useState();
+
+  if(!token) {
+    return <LogIn setToken={setToken}/>
+  }
+
   return (
     <BrowserRouter>
-      {/* <LogIn />
-      <Register /> */}
+      {/* <LogIn /> */}
+      {/* <Register /> */}
       <Header />
       <Views />
     </BrowserRouter>
