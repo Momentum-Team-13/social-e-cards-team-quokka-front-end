@@ -16,6 +16,10 @@ border: 2px green solid;
     padding: 1.5rem;
 }
 
+.icon {
+    border: 2px red solid;
+}
+
 /* CLASSES FROM API */
 /* Fonts */
 .cormorant {
