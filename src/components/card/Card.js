@@ -1,6 +1,4 @@
-import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-// import cards from '../../sample-card-data'
 
 function Card({cards}) {
     // const cards = [

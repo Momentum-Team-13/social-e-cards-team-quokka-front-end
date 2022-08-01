@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "/Users/rachelkelly/Momentum/homework/social-e-cards/src/components/card/card.css";
+// import "/Users/rachelkelly/Momentum/homework/social-e-cards/src/components/card/card.css";
 import "./createCard.css";
 
 // A controlled form input -- form values are in state

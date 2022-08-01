@@ -1,5 +1,3 @@
-import cards from '../../../sample-card-data'
-import axios from 'axios'
 import Sidebar from '../../sidebar/Sidebar'
 import Card from '../../card/Card'
 

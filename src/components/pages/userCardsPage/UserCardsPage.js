@@ -1,6 +1,4 @@
-import cards from '../../../sample-card-data'
 import { useParams } from "react-router-dom"
-import axios from 'axios';
 import Sidebar from '../../sidebar/Sidebar';
 import Card from '../../card/Card';
 

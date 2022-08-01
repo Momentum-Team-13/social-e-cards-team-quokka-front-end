@@ -121,3 +121,6 @@ const cards = [
         // img_src = , 
     }, 
 ]
+
+
+console.log(cards)
