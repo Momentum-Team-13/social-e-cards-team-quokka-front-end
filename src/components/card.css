@@ -12,6 +12,10 @@ border: 2px green solid;
     font-size: 2rem;
 }
 
+.card-text{
+    padding: 1.5rem;
+}
+
 /* CLASSES FROM API */
 /* Fonts */
 .cormorant {
