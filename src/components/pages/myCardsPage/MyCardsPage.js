@@ -1,10 +1,17 @@
 import Sidebar from '../../sidebar/Sidebar'
 import Card from '../../card/Card'
 import axios from 'axios'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 export default function MyCards({token}) {
     const [cards, setCards] = useState([])
+    const [otherUsers, setOtherUsers] = useState ([])
+    const [listType, setListType] = useState("")
+
+    useEffect(() => {
+        setOtherUsers(["Username1", "Username2", "Username3"])
+        setListType("Users who follow me")
+    }, [])
 
     axios
         .get('https://quokka-cards.herokuapp.com/profile', {
@@ -19,7 +26,7 @@ export default function MyCards({token}) {
 
     return (
         <div className="container">
-        <Sidebar />
+        <Sidebar otherUsers={otherUsers} listType={listType} />
         <div>
             My Cards
             <Card cards={cards}/>

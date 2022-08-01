@@ -5,6 +5,14 @@ import { useEffect, useState } from 'react';
 
 export default function Home() {
     const [cards, setCards] = useState([])
+    const [otherUsers, setOtherUsers] = useState ([])
+    const [listType, setListType] = useState("")
+
+
+    useEffect(() => {
+        setOtherUsers(["Username1", "Username2", "Username3"])
+        setListType("Users I follow")
+    }, [])
 
     useEffect(() => {
         setCards([
@@ -133,7 +141,7 @@ export default function Home() {
         
         return (
             <div className="container">
-            <Sidebar />
+            <Sidebar otherUsers={otherUsers} listType={listType}/>
             <div>
                 Cards by users I follow
                 <Card cards={cards} />
