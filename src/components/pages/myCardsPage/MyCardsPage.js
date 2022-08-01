@@ -3,7 +3,7 @@ import Card from '../../card/Card'
 import axios from 'axios'
 import { useState } from 'react'
 
-export default function MyCard({token}) {
+export default function MyCards({token}) {
     const [cards, setCards] = useState([])
 
     axios
