@@ -1,14 +1,23 @@
-import Sidebar from '../../sidebar/Sidebar';
-import Card from '../../card/Card';
-import { useEffect } from 'react'
+import Sidebar from "../../sidebar/Sidebar";
+import Card from "../../card/Card";
+import { useEffect } from "react";
+import { useParams } from 'react-router-dom'
 
-export default function UserCards({token, cards, setCards, listType, setListType, otherUsers, setOtherUsers}) {
-    const userProfile="Other User";
+export default function UserCards({
+    cards,
+    setCards,
+    listType,
+    setListType,
+    otherUsers,
+    setOtherUsers,
+}) {
+    const Params = useParams()
+    const userProfile = Params.username;
 
-    useEffect (() => {
-        setOtherUsers(["Username1", "Username2", "Username3"])
-        setListType("Users I follow")
-    })
+    useEffect(() => {
+        setOtherUsers(["Username1", "Username2", "Username3"]);
+        setListType("Users I follow");
+    });
 
     useEffect(() => {
         setCards([
@@ -137,12 +146,12 @@ export default function UserCards({token, cards, setCards, listType, setListType
 
     return (
         <div className="container">
-            <div>{userProfile}'s Cards Div</div>  
+            <div>{userProfile}'s Cards Div</div>
             <Sidebar listType={listType} otherUsers={otherUsers} />
             <div>
                 All Cards
-                <Card cards={cards}/>
+                <Card cards={cards} />
             </div>
-        </div>   
-    )
+        </div>
+    );
 }
