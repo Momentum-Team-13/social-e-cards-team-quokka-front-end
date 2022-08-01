@@ -1,7 +1,7 @@
 import Sidebar from '../../sidebar/Sidebar'
 import Card from '../../card/Card'
 import axios from 'axios'
-import { useState, useEffect } from 'react'
+import { useEffect } from 'react'
 
 export default function MyCards({token, cards, setCards, listType, setListType, otherUsers, setOtherUsers}) {
 
