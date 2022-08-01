@@ -3,17 +3,16 @@ import Card from '../../card/Card'
 import axios from 'axios'
 import { useState, useEffect } from 'react'
 
-export default function MyCards({token}) {
-    const [cards, setCards] = useState([])
-    const [otherUsers, setOtherUsers] = useState ([])
-    const [listType, setListType] = useState("")
+export default function MyCards({token, cards, setCards, listType, setListType, otherUsers, setOtherUsers}) {
 
     useEffect(() => {
         setOtherUsers(["Username1", "Username2", "Username3"])
         setListType("Users who follow me")
-    }, [])
+    }, [setOtherUsers, setListType])
 
-    axios
+    useEffect (() => {
+
+        axios
         .get('https://quokka-cards.herokuapp.com/profile', {
             headers: {
                 Authorization: `Token ${token}`,
@@ -23,6 +22,7 @@ export default function MyCards({token}) {
             console.log(res.data)
             setCards(res.data)
         })
+    }, [token, setCards])
 
     return (
         <div className="container">

@@ -3,17 +3,13 @@ import '../../card.css'
 import Sidebar from '../../sidebar/Sidebar'
 import '../../sidebar/sidebar.css'
 import axios from 'axios'
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 
 
-export default function Explore() {
-    const [cards, setCards] = useState([])
-    const [otherUsers, setOtherUsers] = useState ([])
-    const [listType, setListType] = useState("")
-
+export default function Explore({cards, setCards, listType, setListType, otherUsers, setOtherUsers, token}) {
     useEffect(() => {
         setListType("All users")
-    }, [])
+    }, [setListType])
 
     useEffect(() =>{
         axios   
@@ -23,7 +19,7 @@ export default function Explore() {
                 // console.log('user results' + res.data)
                 setOtherUsers(res.data)
             })
-    }, [])
+    }, [setOtherUsers])
 
     useEffect(() => {
         axios
@@ -33,7 +29,7 @@ export default function Explore() {
                 // console.log(res.data)
                 setCards(res.data)
             })
-    },[])
+    },[setCards])
 
     return (
         <div className="container">

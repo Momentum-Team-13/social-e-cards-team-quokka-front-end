@@ -1,18 +1,20 @@
-import './homePage.css'
-import Sidebar from '../../sidebar/Sidebar'
-import Card from '../../card/Card'
-import { useEffect, useState } from 'react';
+import "./homePage.css";
+import Sidebar from "../../sidebar/Sidebar";
+import Card from "../../card/Card";
+import { useEffect } from "react";
 
-export default function Home() {
-    const [cards, setCards] = useState([])
-    const [otherUsers, setOtherUsers] = useState ([])
-    const [listType, setListType] = useState("")
-
-
+export default function Home({
+    cards,
+    setCards,
+    listType,
+    setListType,
+    otherUsers,
+    setOtherUsers,
+}) {
     useEffect(() => {
-        setOtherUsers(["Username1", "Username2", "Username3"])
-        setListType("Users I follow")
-    }, [])
+        setOtherUsers(["Username1", "Username2", "Username3"]);
+        setListType("Users I follow");
+    }, [setOtherUsers, setListType]);
 
     useEffect(() => {
         setCards([
@@ -137,15 +139,15 @@ export default function Home() {
                 // img_src = ,
             },
         ]);
-    }, [])
-        
-        return (
-            <div className="container">
-            <Sidebar otherUsers={otherUsers} listType={listType}/>
+    }, [setCards]);
+
+    return (
+        <div className="container">
+            <Sidebar otherUsers={otherUsers} listType={listType} />
             <div>
                 Cards by users I follow
                 <Card cards={cards} />
             </div>
         </div>
-    )
+    );
 }
