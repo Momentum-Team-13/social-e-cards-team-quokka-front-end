@@ -18,8 +18,6 @@ function App() {
     setToken(token)
   }
 
-  const isLoggedIn = username && token
-
   const handleLogout = () => {
     // send request to log out on the server
     console.log(token, username)
@@ -38,8 +36,9 @@ function App() {
         setAuth('', null)
       )
   }
+  
   if(!token){
-    return <LogIn setToken={setToken} setAuth={setAuth} isLoggedIn={isLoggedIn}/>
+    return <LogIn setToken={setToken} setAuth={setAuth}/>
   }
 
 
