@@ -4,31 +4,34 @@ import { useState } from "react";
 
 export default function LogIn({ setAuth }) {
   const [username, setUsername] = useState();
+  const [regUsername, setRegUsername] = useState();
   const [password, setPassword] = useState();
+  const [regPassword, setRegPassword] = useState();
   const [error, setError] = useState(null);
   const [registerClicked, setRegisterClicked] = useState(false);
 
-  const toggleBooleanButton = () => {
+  const toggleFormButton = () => {
     setRegisterClicked(!registerClicked);
   };
 
   const handleRegistration = (event) => {
-    console.log(username, password);
+    console.log(regUsername, regPassword);
     event.preventDefault();
     setError(null);
     axios
       .post("https://quokka-cards.herokuapp.com/api/auth/users/", {
-        username: username,
-        password: password,
+        username: regUsername,
+        password: regPassword,
       })
       .then(() => {
         alert("Successful Registration. Please proceed with logging in!");
         // the following console.log is so that the variable error is used on the page and we stop getting warnings about unused variables so our app will deploy on Netlify
         console.log(error);
+        toggleFormButton();
       })
       .catch((error) => {
-        alert("Invalid Credentials!");
         setError(error.message);
+        alert("Password is either too similar to username or does not meet minimum 8 characters!");
       });
   };
 
@@ -57,7 +60,7 @@ export default function LogIn({ setAuth }) {
 
   return (
     <div className="logIn">
-      {registerClicked === true ? (
+      {registerClicked === false ? (
         <form className="logInWrapper" onSubmit={handleSubmit}>
           <div className="logInLeft">
             <h3 className="logo">QuokkaCards</h3>
@@ -84,7 +87,7 @@ export default function LogIn({ setAuth }) {
               <button
                 type="button"
                 className="registrationButton"
-                onClick={toggleBooleanButton}
+                onClick={toggleFormButton}
               >
                 Register
               </button>
@@ -102,15 +105,15 @@ export default function LogIn({ setAuth }) {
             </div>
             <div className="logInRight">
               <div className="logInBox">
-                <input placeholder="Username" className="logInInput" />
-                <input placeholder="Password" className="logInInput" />
+                <input placeholder="Username" className="logInInput" onChange={(e) => setRegUsername(e.target.value)}/>
+                <input placeholder="Password" className="logInInput" onChange={(e) => setRegPassword(e.target.value)}/>
                 <button className="submitRegistrationButton" type="submit">
                   Submit Registration
                 </button>
                 <button
                   className="returnButton"
                   type="button"
-                  onClick={toggleBooleanButton}
+                  onClick={toggleFormButton}
                 >
                   Return to Log In
                 </button>
