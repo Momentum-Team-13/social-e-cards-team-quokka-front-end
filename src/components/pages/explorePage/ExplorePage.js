@@ -1,5 +1,5 @@
 import Card from '../../card/Card'
-import '../../card/card.css'
+import '../../card.css'
 import Sidebar from '../../sidebar/Sidebar'
 import '../../sidebar/sidebar.css'
 import axios from 'axios'

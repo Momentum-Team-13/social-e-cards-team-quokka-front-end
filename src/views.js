@@ -5,12 +5,12 @@ import MyCards from './components/pages/myCardsPage/MyCardsPage'
 import Explore from './components/pages/explorePage/ExplorePage'
 import UserCards from './components/pages/userCardsPage/UserCardsPage'
 
-export default function Views() {
+export default function Views({token}) {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/newcard" element={<NewCard />} />
-      <Route path="/mycards" element={<MyCards />} />
+      <Route path="/mycards" element={<MyCards token={token} />} />
       <Route path="/explore" element={<Explore />} />
       <Route path="/user/">
         <Route path=":id" element={<UserCards />} />

@@ -46,7 +46,7 @@ function App() {
   return (
     <BrowserRouter>
       <Header handleLogout={handleLogout}/>
-      <Views />
+      <Views token={token}/>
     </BrowserRouter>
   );
 }
