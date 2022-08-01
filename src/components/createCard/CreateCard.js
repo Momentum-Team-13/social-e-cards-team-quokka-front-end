@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import axios from 'axios'
 
 // A controlled form input -- form values are in state
 export const PreviewForm = () => {
@@ -32,6 +33,29 @@ export const PreviewForm = () => {
     const handleChangeMessage = (event) => {
         console.log(event.target.value)
         setMessage(event.target.value)
+    }
+    const [error, setError] = useState(null)
+
+    const handleSubmit = (event) => {
+        event.preventDefault()
+        setError(null)
+        axios
+            .post('https://quokka-cards.herokuapp.com/cards/new/', {
+
+                title: title,
+                message: message,
+                font: font,
+                font_color: fontColor,
+                bg_color: bgColor,
+                border_color: borderColor,
+                border_style: "",
+                img_src: ""
+            })
+            .then(() => {
+            })
+            .catch((error) => {
+                setError(error.message)
+            })
     }
 
     return (
@@ -124,7 +148,7 @@ export const PreviewForm = () => {
 
             </div>
             <div>
-                <button>Submit</button>
+                <button onClick={handleSubmit}>Submit</button>
             </div>
         </div>
     )
