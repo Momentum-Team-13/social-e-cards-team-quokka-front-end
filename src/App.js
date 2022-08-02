@@ -45,7 +45,7 @@ function App() {
   useEffect(() => {
     setFollowCardList([{"message": "endpoint not available yet"}])
     // axios
-    //   .get("https://quokka-cards.herokuapp.com/", {
+    //   .get("https://quokka-cards.herokuapp.com/cards/timeline", {
     //     headers: {
     //       Authorization: `Token ${token}`,
     //     },
@@ -133,7 +133,6 @@ function App() {
           path="/"
           element={
             <Home
-              token={token}
               followCardList={followCardList}
               following={following}
             />
@@ -145,12 +144,8 @@ function App() {
           element={
             <MyCards
               token={token}
-              cards={cards}
-              setCards={setCards}
-              listType={listType}
-              setListType={setListType}
-              otherUsers={otherUsers}
-              setOtherUsers={setOtherUsers}
+              myCardList={myCardList}
+              followers={followers}
             />
           }
         />
@@ -158,13 +153,8 @@ function App() {
           path="/explore"
           element={
             <Explore
-              token={token}
-              cards={cards}
-              setCards={setCards}
-              listType={listType}
-              setListType={setListType}
-              otherUsers={otherUsers}
-              setOtherUsers={setOtherUsers}
+              allCardList={allCardList}
+              allUsers={allUsers}
             />
           }
           />
@@ -174,12 +164,7 @@ function App() {
           element={
             <EditCard
               token={token}
-              cards={cards}
-              setCards={setCards}
-              listType={listType}
-              setListType={setListType}
-              otherUsers={otherUsers}
-              setOtherUsers={setOtherUsers}
+        
             />
           }
         />
@@ -189,13 +174,8 @@ function App() {
             path=":id"
             element={
               <UserCards
+                // Are we going to need a separate API request here? since we won't have the right primary key to add to the profile until the user's name is clicked? 
                 token={token}
-                cards={cards}
-                setCards={setCards}
-                listType={listType}
-                setListType={setListType}
-                otherUsers={otherUsers}
-                setOtherUsers={setOtherUsers}
               />
             }
           />

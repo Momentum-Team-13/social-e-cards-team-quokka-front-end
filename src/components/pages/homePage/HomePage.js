@@ -3,12 +3,12 @@ import Sidebar from "../../sidebar/Sidebar";
 import Card from "../../card/Card";
 
 export default function Home({ followCardList, following }) {
+    const sidebarTitle= "People I follow"
     return (
         <div className="container">
-            <Sidebar following={following} />
+            <Sidebar userNames={following} title={sidebarTitle}/>
             <div>
-                Cards by users I follow
-                <Card followCardList={followCardList} />
+                <Card cards={followCardList} />
             </div>
         </div>
     );
