@@ -1,138 +1,131 @@
 .card {
-margin: 25px;
+    margin: 25px;
 }
 .card-list {
-/* margin: 25px; */
-border: 2px green solid;
+    /* margin: 25px; */
+    border: 2px green solid;
 }
 .card-text {
-    padding:1.5rem;
+    padding: 1.5rem;
 }
 .card-title {
     font-size: 2rem;
 }
-
-.card-text{
+.card-text {
     padding: 1.5rem;
+    height: 400px;
+    width: 85%;
 }
-
 /* CLASSES FROM API */
 /* Fonts */
 .cormorant {
-font-family: 'Cormorant Unicase', serif;
+    font-family: 'Cormorant Unicase', serif;
 }
 .kaushan {
-font-family:'Kaushan Script', cursive;
+    font-family: 'Kaushan Script', cursive;
 }
 .amatic {
-font-family: 'Amatic SC', cursive;
+    font-family: 'Amatic SC', cursive;
 }
 .bungee {
-font-family: 'Bungee Shade', cursive;
+    font-family: 'Bungee Shade', cursive;
 }
 .righteous {
-font-family: 'Righteous', cursive;
+    font-family: 'Righteous', cursive;
 }
 .julius {
-font-family: 'Julius Sans One', sans-serif;
+    font-family: 'Julius Sans One', sans-serif;
 }
 .roboto {
-font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 .spectral {
-font-family: 'Spectral', serif;
+    font-family: 'Spectral', serif;
 }
 .dancing {
-font-family: 'Dancing Script', cursive;
+    font-family: 'Dancing Script', cursive;
 }
-
-
 /* Font Colors */
-.white {
-color: white;
+.White {
+    color: white;
 }
-.red {
-color:red;
+.Red {
+    color: red;
 }
-.black{
-color: black;
+.Black {
+    color: black;
 }
-.blue {
-color: blue;
+.Blue {
+    color: blue;
 }
-.green {
-color:green;
+.Green {
+    color: green;
 }
-.yellow {
-color: yellow;
+.Yellow {
+    color: yellow;
 }
-.orange {
-color: orange;
+.Orange {
+    color: orange;
 }
-.purple {
-color: purple;
+.Purple {
+    color: purple;
 }
-.brown {
-color:brown;
+.Brown {
+    color: brown;
 }
-
-
 /* Background Colors */
-.bg-white {
-background-color: white;
+.bg-White {
+    background-color: white;
 }
-.bg-red {
-background-color: red;
+.bg-Red {
+    background-color: red;
 }
-.bg-black {
-background-color: black;
+.bg-Black {
+    background-color: black;
 }
-.bg-blue {
-background-color: blue;
+.bg-Blue {
+    background-color: blue;
 }
-.bg-green {
-background-color: green;
+.bg-Green {
+    background-color: green;
 }
-.bg-yellow {
-background-color: yellow;
+.bg-Yellow {
+    background-color: yellow;
 }
-.bg-orange {
-background-color: orange;
+.bg-Orange {
+    background-color: orange;
 }
-.bg-purple {
-background-color: purple;
+.bg-Purple {
+    background-color: purple;
 }
-.bg-brown {
-background-color: brown;
+.bg-Brown {
+    background-color: brown;
 }
-
-
-
 /* Border Colors */
-.border-white {
-border: 2px white solid;
+.border-White {
+    border: 2px white solid;
 }
-.border-black {
-border: 2px black solid;
+.border-Black {
+    border: 2px black solid;
 }
-.border-red {
-border: 2px red solid;
+.border-Red {
+    border: 2px red solid;
 }
-.border-blue {
-border: 2px blue solid;
+.border-Blue {
+    border: 2px blue solid;
 }
-.border-green {
-border: 2px green solid;
+.border-Green {
+    border: 2px green solid;
 }
-.border-yellow {
-border: 2px yellow solid;
+.border-Yellow {
+    border: 2px yellow solid;
 }
-.border-orange {
-border: 2px orange solid;
+.border-Orange {
+    border: 2px orange solid;
 }
-.border-purple {
-border: 2px purple solid;
+.border-Purple {
+    border: 2px purple solid;
 }
-.border-brown {
-border: 2px brown solid;
+.border-Brown {
+    border: 2px brown solid;
 }

@@ -31,7 +31,7 @@ export default function LogIn({ setAuth }) {
             .catch((error) => {
                 setError(error.message);
                 alert(
-                    "Password is either too similar to username or does not meet minimum 8 characters!"
+                    "The password is either too similar to the username or does not meet minimum length requirement of 8 characters."
                 );
             });
     };
@@ -95,48 +95,94 @@ export default function LogIn({ setAuth }) {
                 </form>
             ) : (
                 <div className="logincontainer">
-                    <form
-                        className="logInWrapper"
-                        onSubmit={handleRegistration}
-                    >
-                        <div className="logInLeft">
-                            <h3 className="logo">QuokkaCards</h3>
-                            <span className="logInDescription">
-                                Easily sign up today to get started.
-                            </span>
-                        </div>
-                        <div className="logInRight">
-                            <div className="logInBox">
-                                <input
-                                    placeholder="Username"
-                                    className="logInInput"
-                                    onChange={(e) =>
-                                        setRegUsername(e.target.value)
-                                    }
-                                />
-                                <input
-                                    placeholder="Password"
-                                    className="logInInput"
-                                    onChange={(e) =>
-                                        setRegPassword(e.target.value)
-                                    }
-                                />
-                                <button
-                                    className="submitRegistrationButton"
-                                    type="submit"
-                                >
-                                    Submit Registration
-                                </button>
-                                <button
-                                    className="returnButton"
-                                    type="button"
-                                    onClick={toggleFormButton}
-                                >
-                                    Return to Log In
-                                </button>
+                    {registerClicked === false ? (
+                        <form className="logInWrapper" onSubmit={handleSubmit}>
+                            <div className="logInLeft">
+                                <h3 className="logo">QuokkaCards</h3>
+                                <span className="logInDescription">
+                                    The place to connect and share e-cards with
+                                    friends.
+                                </span>
                             </div>
+                            <div className="logInRight">
+                                <div className="logInBox">
+                                    <input
+                                        placeholder="Username"
+                                        className="logInInput"
+                                        onChange={(e) =>
+                                            setUsername(e.target.value)
+                                        }
+                                    />
+                                    <input
+                                        type="password"
+                                        placeholder="Password"
+                                        className="logInInput"
+                                        onChange={(e) =>
+                                            setPassword(e.target.value)
+                                        }
+                                    />
+                                    <button
+                                        type="submit"
+                                        className="logInButton"
+                                    >
+                                        Log In
+                                    </button>
+                                    <button
+                                        type="button"
+                                        className="registrationButton"
+                                        onClick={toggleFormButton}
+                                    >
+                                        Register
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    ) : (
+                        <div className="logincontainer">
+                            <form
+                                className="logInWrapper"
+                                onSubmit={handleRegistration}
+                            >
+                                <div className="logInLeft">
+                                    <h3 className="logo">QuokkaCards</h3>
+                                    <span className="logInDescription">
+                                        Easily sign up today to get started.
+                                    </span>
+                                </div>
+                                <div className="logInRight">
+                                    <div className="logInBox">
+                                        <input
+                                            placeholder="Username"
+                                            className="logInInput"
+                                            onChange={(e) =>
+                                                setRegUsername(e.target.value)
+                                            }
+                                        />
+                                        <input
+                                            placeholder="Password"
+                                            className="logInInput"
+                                            onChange={(e) =>
+                                                setRegPassword(e.target.value)
+                                            }
+                                        />
+                                        <button
+                                            className="submitRegistrationButton"
+                                            type="submit"
+                                        >
+                                            Submit Registration
+                                        </button>
+                                        <button
+                                            className="returnButton"
+                                            type="button"
+                                            onClick={toggleFormButton}
+                                        >
+                                            Return to Log In
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
-                    </form>
+                    )}
                 </div>
             )}
         </div>
