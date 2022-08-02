@@ -1,0 +1,60 @@
+nav{
+  background:rgb(65, 168, 205);
+  height: 80px;
+  width: 100%; 
+}
+
+.navlogo{
+  color: white;
+  font-size: 35px;
+  line-height: 80px;
+  padding-left: 100px;
+  font-weight: 800;
+}
+
+nav ul{
+  float: right;
+  margin-right: 20px;
+  display: flex;
+  flex-direction: row;
+  line-height: 80px;
+  flex-wrap: nowrap;
+}
+
+.navlink, .navlink:hover, .navlink:focus, .navlink:active {
+  font-size: 17px;
+  margin: 0 5px;
+  color: white;
+  text-transform: uppercase;
+  text-decoration: none;
+
+}
+
+/* .header {
+  border: 2px pink solid;
+  /* height: 13rem; */
+  /* flex-direction: column;
+  display: flex; */
+  /* padding: 10px; */
+  /* margin-bottom: 5px; */
+  /* justify-content: center; */
+  /* align-items: center; */
+
+/* .app-title {
+  font-weight: 800;
+  align-self: center;
+  font-size: 50px;
+  color: rgb(65, 168, 205);
+} */
+
+/* .nav {
+  border: 2px orange solid;
+  justify-content: space-around;
+  display: flex;
+} */
+
+/* .sign-out {
+  align-self: flex-end;
+  margin-right: 10px;
+  margin-top: 10px
+} */

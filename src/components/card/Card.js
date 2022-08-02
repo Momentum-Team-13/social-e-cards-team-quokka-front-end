@@ -8,16 +8,16 @@ function Card({ cards }) {
 
     const handleFollow = () => {
         console.log("follow");
-        axios   
-            .post('https://quokka-cards.herokuapp.com/users/follow', {
-                user: 
-                following: 
-            }
-            {
-                headers: {
-                    Authorization: `Token ${token}`,
-                }
-            })
+        // axios   
+        //     .post('https://quokka-cards.herokuapp.com/users/follow', {
+        //         user: 
+        //         following: 
+        //     }
+        //     {
+        //         headers: {
+        //             Authorization: `Token ${token}`,
+        //         }
+        //     })
         // axios request will go here
     };
 
