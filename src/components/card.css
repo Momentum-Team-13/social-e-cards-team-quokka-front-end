@@ -1,184 +1,131 @@
 .card {
-
     margin: 25px;
 }
-
 .card-list {
     /* margin: 25px; */
     border: 2px green solid;
 }
-
 .card-text {
     padding: 1.5rem;
 }
-
-
 .card-title {
     font-size: 2rem;
 }
-
-
 .card-text {
-
     padding: 1.5rem;
+    height: 400px;
+    width: 85%;
 }
-
 /* CLASSES FROM API */
 /* Fonts */
 .cormorant {
-
     font-family: 'Cormorant Unicase', serif;
 }
-
 .kaushan {
     font-family: 'Kaushan Script', cursive;
 }
-
 .amatic {
     font-family: 'Amatic SC', cursive;
 }
-
 .bungee {
     font-family: 'Bungee Shade', cursive;
 }
-
 .righteous {
     font-family: 'Righteous', cursive;
 }
-
 .julius {
     font-family: 'Julius Sans One', sans-serif;
 }
-
 .roboto {
     font-family: 'Roboto', sans-serif;
 }
-
 .spectral {
     font-family: 'Spectral', serif;
 }
-
 .dancing {
     font-family: 'Dancing Script', cursive;
-
 }
-
-
 /* Font Colors */
-
 .White {
     color: white;
 }
-
 .Red {
     color: red;
 }
-
 .Black {
     color: black;
 }
-
 .Blue {
     color: blue;
 }
-
 .Green {
     color: green;
 }
-
 .Yellow {
     color: yellow;
 }
-
 .Orange {
     color: orange;
 }
-
 .Purple {
     color: purple;
 }
-
 .Brown {
     color: brown;
-
 }
-
-
 /* Background Colors */
-.bg-white {
-
+.bg-White {
     background-color: white;
 }
-
-.bg-red {
+.bg-Red {
     background-color: red;
 }
-
-.bg-black {
+.bg-Black {
     background-color: black;
 }
-
-.bg-blue {
+.bg-Blue {
     background-color: blue;
 }
-
-.bg-green {
+.bg-Green {
     background-color: green;
 }
-
-.bg-yellow {
+.bg-Yellow {
     background-color: yellow;
 }
-
-.bg-orange {
+.bg-Orange {
     background-color: orange;
 }
-
-.bg-purple {
+.bg-Purple {
     background-color: purple;
 }
-
-.bg-brown {
+.bg-Brown {
     background-color: brown;
 }
-
-
-
 /* Border Colors */
-.border-white {
-
+.border-White {
     border: 2px white solid;
 }
-
-.border-black {
+.border-Black {
     border: 2px black solid;
 }
-
-.border-red {
+.border-Red {
     border: 2px red solid;
 }
-
-.border-blue {
+.border-Blue {
     border: 2px blue solid;
 }
-
-.border-green {
+.border-Green {
     border: 2px green solid;
 }
-
-.border-yellow {
+.border-Yellow {
     border: 2px yellow solid;
 }
-
-.border-orange {
+.border-Orange {
     border: 2px orange solid;
 }
-
-.border-purple {
+.border-Purple {
     border: 2px purple solid;
 }
-
-.border-brown {
+.border-Brown {
     border: 2px brown solid;
-
 }

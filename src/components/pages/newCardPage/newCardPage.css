@@ -1,0 +1,43 @@
+.previewBox {
+    /* border: 2px red solid; */
+    margin: 25px;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.preview-border{
+    height: 400px;
+    width: 100%;
+}
+
+.input-field {
+    padding: 10px;
+    margin-top: 10px;
+    /* border: 2px purple solid; */
+}
+
+.dropdown {
+    padding: 10px;
+    /* border: 2px grey solid; */
+    align-items: center;
+    margin-right: 15px;
+}
+
+.card {
+    min-width: 200px;
+}
+
+.options {
+    /* border: 2px aqua solid; */
+}
+
+.preview {
+    /* border: 2px darkorange solid; */
+    height: 400px;
+    width: 85%;
+} 
+
+.submit {
+    margin-top: 20px;
+}

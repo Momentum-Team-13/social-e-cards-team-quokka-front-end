@@ -11,8 +11,6 @@ export default function UserCards({
     otherUsers,
     setOtherUsers,
 }) {
-    const Params = useParams()
-    const userProfile = Params.username;
 
     useEffect(() => {
         setOtherUsers(["Username1", "Username2", "Username3"]);
@@ -146,7 +144,7 @@ export default function UserCards({
 
     return (
         <div className="container">
-            <div>{userProfile}'s Cards Div</div>
+            <div></div>
             <Sidebar listType={listType} otherUsers={otherUsers} />
             <div>
                 All Cards

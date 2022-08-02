@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-import "./header.css";
+import "./navbar.css";
 import "bulma/css/bulma.min.css";
 
-export default function Header({ handleLogout }) {
+export default function Navbar({ handleLogout }) {
   return (
     <nav>
       <label className="navlogo">QuokkaCards</label>
