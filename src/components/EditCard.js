@@ -1,16 +1,13 @@
-
-
 import { useState } from 'react'
 import axios from 'axios'
 
 
 // A controlled form input -- form values are in state
-export const PreviewForm = (token) => {
+export const EditForm = (token, id) => {
     const [bgColor, setBgColor] = useState("White");
     const [borderColor, setBorderColor] = useState("Black");
     const [fontColor, setFontColor] = useState("Black");
     const [font, setFont] = useState("roboto");
-
     const [title, setTitle] = useState("");
     const [message, setMessage] = useState("");
 
@@ -36,12 +33,11 @@ export const PreviewForm = (token) => {
     };
     const handleChangeMessage = (event) => {
 
-
         console.log(event.target.value)
         setMessage(event.target.value)
     }
     const [error, setError] = useState(null)
-
+    console.log(error)
     const handleSubmit = (event) => {
         console.log(token.token);
         console.log(title, message, font, fontColor, bgColor, borderColor)
@@ -67,7 +63,6 @@ export const PreviewForm = (token) => {
                 setError(error.message)
             })
     }
-
 
 
 
@@ -120,7 +115,6 @@ export const PreviewForm = (token) => {
                                 id="color"
                                 name="color"
                             >
-
                                 <option value="White">White</option>
                                 <option value="Black">Black</option>
                                 <option value="Red">Red</option>
@@ -130,7 +124,6 @@ export const PreviewForm = (token) => {
                                 <option value="Orange">Orange</option>
                                 <option value="Purple">Purple</option>
                                 <option value="Brown">Brown</option>
-
                             </select>
                         </div>
 
@@ -144,7 +137,6 @@ export const PreviewForm = (token) => {
                                 id="color"
                                 name="color"
                             >
-
                                 <option value="Black">Black</option>
                                 <option value="White">White</option>
                                 <option value="Red">Red</option>
@@ -154,7 +146,6 @@ export const PreviewForm = (token) => {
                                 <option value="Orange">Orange</option>
                                 <option value="Purple">Purple</option>
                                 <option value="Brown">Brown</option>
-
                             </select>
                             <br></br>
                         </div>
@@ -178,7 +169,6 @@ export const PreviewForm = (token) => {
                                 <option value="Orange">Orange</option>
                                 <option value="Purple">Purple</option>
                                 <option value="Brown">Brown</option>
-
                             </select>
                             <br></br>
                         </div>
@@ -206,11 +196,9 @@ export const PreviewForm = (token) => {
                         </div>
                     </div>
                     <div>
-
                         <button onClick={handleSubmit} className="button submit">Submit</button>
-
-                    </div >
-                </div >
+                    </div>
+                </div>
                 <div className="preview">
                     <div className="card">
                         <div
@@ -226,16 +214,14 @@ export const PreviewForm = (token) => {
                     </div>
 
 
+                </div><br></br>
 
-                </div > <br></br>
 
-
-            </div >
+            </div>
             <div>
 
 
-
-            </div >
-        </div >
+            </div>
+        </div>
     );
 };
