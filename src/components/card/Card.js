@@ -1,17 +1,28 @@
 import { Link } from "react-router-dom";
 import { FaHeart } from "react-icons/fa";
 import { FaRegHeart } from "react-icons/fa";
+import axios from "axios";
 
 function Card({ cards }) {
     const following = ["connor", "admin"];
 
     const handleFollow = () => {
         console.log("follow");
+        axios   
+            .post('https://quokka-cards.herokuapp.com/users/follow', {
+                user: 
+                following: 
+            }
+            {
+                headers: {
+                    Authorization: `Token ${token}`,
+                }
+            })
         // axios request will go here
     };
 
     const handleUnfollow = () => {
-        console.log();
+        console.log("unfollow");
         // axios request will go here
     };
 
