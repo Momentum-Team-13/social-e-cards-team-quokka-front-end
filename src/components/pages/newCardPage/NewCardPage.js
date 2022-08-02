@@ -1,10 +1,11 @@
-import cards from '../../../sample-card-data'
-import { useState, useRef } from 'react'
+
 import { PreviewForm } from '../../createCard/CreateCard'
-export default function NewCard() {
+
+export default function NewCard({ token }) {
+    console.log(token)
     return (
         <div>
-            <PreviewForm></PreviewForm>
+            <PreviewForm token={token}></PreviewForm>
 
         </div>
 

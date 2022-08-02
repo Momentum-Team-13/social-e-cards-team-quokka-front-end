@@ -1,10 +1,9 @@
-
 import { useState } from 'react'
 import axios from 'axios'
 
 
 // A controlled form input -- form values are in state
-export const PreviewForm = (token) => {
+export const EditForm = (token, id) => {
     const [bgColor, setBgColor] = useState("White");
     const [borderColor, setBorderColor] = useState("Black");
     const [fontColor, setFontColor] = useState("Black");
