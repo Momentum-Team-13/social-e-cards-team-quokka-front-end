@@ -11,20 +11,96 @@ import LogIn from "./components/pages/logInPage/LogInPage";
 import "bulma/css/bulma.min.css";
 import useLocalStorageState from "use-local-storage-state";
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function App() {
   const [token, setToken] = useLocalStorageState("quokkaToken", null);
   const [username, setUsername] = useLocalStorageState("quokkaUsername", "");
-  const [cards, setCards] = useState([]);
-  const [otherUsers, setOtherUsers] = useState([]);
-  const [listType, setListType] = useState("");
-
+  const [myCardList, setMyCardList] = useState([]);
+  const [followCardList, setFollowCardList] = useState([]);
+  const [allCardList, setAllCardList] = useState([]);
+  const [following, setFollowing] = useState([]);
+  const [followers, setFollowers] = useState([]);
+  const [allUsers, setAllUsers] = useState([]);
 
   const setAuth = (username, token) => {
     setUsername(username);
     setToken(token);
   };
+
+  useEffect(() => {
+    axios
+      .get("https://quokka-cards.herokuapp.com/profile", {
+        headers: {
+          Authorization: `Token ${token}`,
+        },
+      })
+      .then((res) => {
+        console.log(res.data);
+        setMyCardList(res.data);
+      });
+  }, [token, setMyCardList]);
+  
+  // FollowCardList endpoint isn't available yet. 
+  useEffect(() => {
+    setFollowCardList([{"message": "endpoint not available yet"}])
+    // axios
+    //   .get("https://quokka-cards.herokuapp.com/", {
+    //     headers: {
+    //       Authorization: `Token ${token}`,
+    //     },
+    //   })
+    //   .then((res) => {
+    //     console.log(res.data);
+    //     setFollowCardList(res.data);
+    //   });
+  }, [token, setFollowCardList]);
+    
+  useEffect(() => {
+    axios
+        .get('https://quokka-cards.herokuapp.com/cards', {
+        })
+        .then((res) => {
+            // console.log(res.data)
+            setAllCardList(res.data)
+        })
+},[setAllCardList])
+
+  useEffect(() => {
+    axios
+      .get("https://quokka-cards.herokuapp.com/following/", {
+        headers: {
+          Authorization: `Token ${token}`,
+        },
+      })
+      .then((res) => {
+        console.log(res.data);
+        setFollowing(res.data);
+      });
+  }, [token, setFollowing]);
+
+  useEffect(() => {
+    axios
+      .get("https://quokka-cards.herokuapp.com/followers/", {
+        headers: {
+          Authorization: `Token ${token}`,
+        },
+      })
+      .then((res) => {
+        console.log(res.data);
+        setFollowers(res.data);
+      });
+  }, [token, setFollowers]);
+
+  useEffect(() =>{
+    axios   
+        .get('https://quokka-cards.herokuapp.com/users/', {
+        })
+        .then((res) => {
+            // console.log('user results' + res.data)
+            setAllUsers(res.data)
+        })
+}, [setAllUsers])
 
   const handleLogout = () => {
     // send request to log out on the server
@@ -58,12 +134,8 @@ function App() {
           element={
             <Home
               token={token}
-              cards={cards}
-              setCards={setCards}
-              listType={listType}
-              setListType={setListType}
-              otherUsers={otherUsers}
-              setOtherUsers={setOtherUsers}
+              followCardList={followCardList}
+              following={following}
             />
           }
         />
