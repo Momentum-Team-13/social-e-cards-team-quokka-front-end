@@ -175,6 +175,7 @@ function App() {
             element={
               <UserCards
                 // Are we going to need a separate API request here? since we won't have the right primary key to add to the profile until the user's name is clicked? 
+                // What do we want in the sidebar on this page? allUsers? following?
                 token={token}
               />
             }

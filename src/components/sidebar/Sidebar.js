@@ -1,4 +1,3 @@
-// import { useEffect, useState } from 'react'
 import "./sidebar.css";
 
 export default function Sidebar({ userNames, title }) {
