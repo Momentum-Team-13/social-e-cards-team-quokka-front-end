@@ -1,4 +1,5 @@
 .card {
+
     margin: 25px;
 }
 
@@ -11,17 +12,21 @@
     padding: 1.5rem;
 }
 
+
 .card-title {
     font-size: 2rem;
 }
 
+
 .card-text {
+
     padding: 1.5rem;
 }
 
 /* CLASSES FROM API */
 /* Fonts */
 .cormorant {
+
     font-family: 'Cormorant Unicase', serif;
 }
 
@@ -55,10 +60,12 @@
 
 .dancing {
     font-family: 'Dancing Script', cursive;
+
 }
 
 
 /* Font Colors */
+
 .White {
     color: white;
 }
@@ -93,11 +100,13 @@
 
 .Brown {
     color: brown;
+
 }
 
 
 /* Background Colors */
 .bg-white {
+
     background-color: white;
 }
 
@@ -137,6 +146,7 @@
 
 /* Border Colors */
 .border-white {
+
     border: 2px white solid;
 }
 
@@ -170,4 +180,5 @@
 
 .border-brown {
     border: 2px brown solid;
+
 }

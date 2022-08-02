@@ -1,4 +1,5 @@
 
+
 import { PreviewForm } from '../../createCard/CreateCard'
 
 export default function NewCard({ token }) {
