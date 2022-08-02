@@ -28,9 +28,7 @@ export default function LogIn({ setAuth }) {
       })
       .catch((error) => {
         setError(error.message);
-        alert(
-          "Password is either too similar to username or does not meet minimum 8 characters!"
-        );
+        alert("The password is either too similar to the username or does not meet minimum length requirement of 8 characters.");
       });
   };
   const handleSubmit = (event) => {
