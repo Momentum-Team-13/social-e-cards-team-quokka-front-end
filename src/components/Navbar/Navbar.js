@@ -5,6 +5,7 @@ import "bulma/css/bulma.min.css";
 export default function Navbar({ handleLogout }) {
   return (
     <nav>
+      <div>Test</div>
       <label className="navlogo">QuokkaCards</label>
       <ul>
         <li>

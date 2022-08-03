@@ -18,9 +18,8 @@ function Card({cards}) {
                         </div>
                     </div>
 
-                    <Link to={`/user/${card.username}`} className="btn btn-primary">Author: {card.username}</Link>
-
-                    {/* add profile link to user */}
+                    <Link to={`/profile/${card.username}`} className="btn btn-primary">Author: {card.username}</Link>
+                    
                 </div>
             )}
             </div>
