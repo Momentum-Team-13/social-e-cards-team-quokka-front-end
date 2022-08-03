@@ -31,12 +31,17 @@
 
 .card {
     min-width: 200px;
+    word-break: keep-all;
 }
 
 /* .options {
     border: 2px aqua solid;
 } */
 
+.messageBox {
+    word-break: keep-all;
+    padding: 1.5rem;
+}
 
 .submit {
     margin-top: 20px;
