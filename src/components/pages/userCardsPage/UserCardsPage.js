@@ -1,7 +1,7 @@
 import Sidebar from "../../sidebar/Sidebar";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import TimeAgo from "javascript-time-ago";
 import en from "javascript-time-ago/locale/en.json";
 import ReactTimeAgo from "react-time-ago";
@@ -24,7 +24,7 @@ export default function UserCards({ token, allUsers }) {
                 console.log(res.data);
                 setUserCardList(res.data);
             });
-    }, []);
+    }, [id, token]);
 
     const sidebarTitle = "All QuokkaCards Users";
     return (

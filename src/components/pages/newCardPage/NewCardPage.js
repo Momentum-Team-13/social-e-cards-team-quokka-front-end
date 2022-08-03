@@ -37,6 +37,7 @@ export default function NewCard(token) {
         setMessage(event.target.value);
     };
     const [error, setError] = useState(null);
+    console.log(error)
 
     const handleSubmit = (event) => {
         console.log(token.token);
