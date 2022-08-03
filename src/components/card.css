@@ -1,10 +1,12 @@
 .card {
     margin: 25px;
+    /* border: 2px grey solid; */
 }
 
 .card-list-container{
     margin-left: 150px;
     margin-top: 90px;
+    /* border: 2px green solid; */
 }
 
 .card-list {
@@ -14,17 +16,19 @@
     margin-right: 50px;
     display: flex;
     flex-direction: column;
+    /* border: 2px blue solid; */
 }
 .card-text {
     padding: 1.5rem;
+    /* border: 4px pink solid; */
+    height: 400px;
 }
 .card-title {
     font-size: 2rem;
+    /* border: 2px purple solid; */
 }
-.card-text {
-    padding: 1.5rem;
-    height: 400px;
-}
+
+
 /* CLASSES FROM API */
 /* Fonts */
 .cormorant {
@@ -35,6 +39,7 @@
 }
 .amatic {
     font-family: 'Amatic SC', cursive;
+    /* font-size: 2rem; */
 }
 .bungee {
     font-family: 'Bungee Shade', cursive;
