@@ -40,6 +40,10 @@
     font-size: 3rem;
 }
 
+.card-footer-item {
+    justify-content: space-between;
+}
+
 /* CLASSES FROM API */
 /* Fonts */
 .cormorant {

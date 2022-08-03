@@ -1,4 +1,8 @@
 import { Link } from "react-router-dom";
+import TimeAgo from "javascript-time-ago";
+import en from "javascript-time-ago/locale/en.json";
+import ReactTimeAgo from "react-time-ago";
+TimeAgo.addDefaultLocale(en);
 
 function Card({ cards }) {
     return (
@@ -14,18 +18,28 @@ function Card({ cards }) {
                             >
                                 {card.title}
                             </div>
-                            <div className={`card-message has-text-centered ${card.font_color} ${card.font}`}>
+                            <div
+                                className={`card-message has-text-centered ${card.font_color} ${card.font}`}
+                            >
                                 {card.message}
                             </div>
                         </div>
 
-                        <Link
-                            to={`/users/${card.user_id}`}
-                            className="btn btn-primary"
-                        >
-                            Author: {card.username}
-                        </Link>
-                        {/* add profile link to user */}
+                        <div className="card-footer-item">
+                            <Link
+                                to={`/users/${card.user_id}`}
+                                className="btn btn-primary"
+                            >
+                                {card.username}
+                            </Link>
+                            <div className="">
+                                <ReactTimeAgo
+                                    date={card.created_at}
+                                    locale="en-US"
+                                    timeStyle="twitter"
+                                />
+                            </div>
+                        </div>
                     </div>
                 ))}
             </div>
