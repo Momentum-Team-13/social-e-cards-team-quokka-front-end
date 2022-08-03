@@ -1,17 +1,17 @@
-// import { useEffect, useState } from 'react'
 import "./sidebar.css";
 
-export default function Sidebar({ otherUsers, listType }) {
-    return (
-        <div className="sidebar-container">
-            <div className="sidebar">
-                <div className="sidebar-title">{listType}</div>
-                <div className="sidebar-list-container">
-                {otherUsers.map((otherUser) => (
-                    <div className="list">{otherUser.username}</div>
-                ))}
-                </div>
-            </div>
+export default function Sidebar({ userNames, title }) {
+  return (
+    <div className="sidebar-container">
+      <div className="sidebar">
+        <div className="sidebar-title">{title}</div>
+        <div className="sidebar-list-container">
+          {userNames.map((user) => (
+            <div className="list">{user.id}</div>
+            // when BE changes follow model to include username, use user.username instead of user.id
+          ))}
         </div>
-    );
+      </div>
+    </div>
+  );
 }

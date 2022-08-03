@@ -1,42 +1,14 @@
-import Card from '../../card/Card'
-import '../../card.css'
-import Sidebar from '../../sidebar/Sidebar'
-import '../../sidebar/sidebar.css'
-import axios from 'axios'
-import { useEffect } from 'react'
+import Card from "../../card/Card";
+import "../../card.css";
+import Sidebar from "../../sidebar/Sidebar";
+import "../../sidebar/sidebar.css";
 
-
-export default function Explore({cards, setCards, listType, setListType, otherUsers, setOtherUsers, token}) {
-    useEffect(() => {
-        setListType("All Quokka Card Users")
-    }, [setListType])
-
-    useEffect(() =>{
-        axios   
-            .get('https://quokka-cards.herokuapp.com/users/', {
-            })
-            .then((res) => {
-                // console.log('user results' + res.data)
-                setOtherUsers(res.data)
-            })
-    }, [setOtherUsers])
-
-    useEffect(() => {
-        axios
-            .get('https://quokka-cards.herokuapp.com/cards', {
-            })
-            .then((res) => {
-                // console.log(res.data)
-                setCards(res.data)
-            })
-    },[setCards])
-
+export default function Explore({ allCardList, allUsers }) {
+    const sidebarTitle="All QuokkaCards Users"
     return (
         <>
-            <Sidebar otherUsers={otherUsers} listType={listType}/>
-            <Card cards={cards}/>
-        </>    
-    )
+            <Sidebar userNames={allUsers} title={sidebarTitle}/>
+            <Card cards={allCardList} />
+        </>
+    );
 }
-
-
