@@ -8,7 +8,7 @@ import { useEffect } from 'react'
 
 export default function Explore({cards, setCards, listType, setListType, otherUsers, setOtherUsers, token}) {
     useEffect(() => {
-        setListType("All users")
+        setListType("All Quokka Card Users")
     }, [setListType])
 
     useEffect(() =>{
@@ -32,10 +32,10 @@ export default function Explore({cards, setCards, listType, setListType, otherUs
     },[setCards])
 
     return (
-        <div className="container">
+        <>
             <Sidebar otherUsers={otherUsers} listType={listType}/>
             <Card cards={cards}/>
-        </div>    
+        </>    
     )
 }
 

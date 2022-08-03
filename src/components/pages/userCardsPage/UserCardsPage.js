@@ -143,13 +143,9 @@ export default function UserCards({
     }, [setCards]);
 
     return (
-        <div className="container">
-            <div></div>
+        <>
             <Sidebar listType={listType} otherUsers={otherUsers} />
-            <div>
-                All Cards
-                <Card cards={cards} />
-            </div>
-        </div>
+            <Card cards={cards} />
+        </>
     );
 }

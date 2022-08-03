@@ -8,28 +8,28 @@ export default function Navbar({ handleLogout }) {
       <label className="navlogo">QuokkaCards</label>
       <ul>
         <li>
-          <div className="navlink">
-            <Link to={"/"}>Home</Link>
+          <div>
+            <Link to={"/"} className="navlink">Home</Link>
           </div>
         </li>
         <li>
-          <div className="navlink">
-            <Link to={"/explore"}>Explore</Link>
+          <div>
+            <Link to={"/explore"}className="navlink">Explore</Link>
           </div>
         </li>
         <li>
-          <div className="navlink">
-            <Link to={"/MyCards"}>My Cards</Link>
+          <div>
+            <Link to={"/MyCards"}className="navlink">My Cards</Link>
           </div>
         </li>
         <li>
-          <div className="navlink">
-            <Link to={"/NewCard"}>New Card</Link>
+          <div>
+            <Link to={"/NewCard"} className="navlink">New Card</Link>
           </div>
         </li>
         <li>
-          <div className="navlink" onClick={handleLogout}>
-            <Link to={"/"}>Sign Out</Link>
+          <div onClick={handleLogout}>
+            <Link to={"/"} className="navlink">Sign Out</Link>
           </div>
         </li>
       </ul>

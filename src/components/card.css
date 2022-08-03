@@ -1,9 +1,18 @@
 .card {
     margin: 25px;
 }
+
+.card-list-container{
+    margin-left: 150px;
+    margin-top: 50px;
+}
+
 .card-list {
-    /* margin: 25px; */
-    border: 2px green solid;
+    border: 2px ;
+    border-radius: 10px;
+    margin-left: 100px;
+    display: flex;
+    flex-direction: column;
 }
 .card-text {
     padding: 1.5rem;

@@ -1,6 +1,10 @@
+.new-card-container{
+    display: flex;
+}
+
 .previewBox {
     /* border: 2px red solid; */
-    margin: 25px;
+    margin-top: 70px;
     padding: 10px;
     display: grid;
     grid-template-columns: 1fr 1fr;

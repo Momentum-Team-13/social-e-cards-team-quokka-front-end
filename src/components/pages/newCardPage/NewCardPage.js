@@ -65,7 +65,8 @@ export default function NewCard(token) {
   };
 
   return (
-    <div>
+    <>
+    <div className="new-card-container">
       <div className="previewBox">
         <div className="options">
           <div className="input-field">
@@ -202,5 +203,7 @@ export default function NewCard(token) {
       </div>
       <div></div>
     </div>
+     </>
   );
+ 
 };
