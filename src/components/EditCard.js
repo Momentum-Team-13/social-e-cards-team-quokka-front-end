@@ -1,8 +1,44 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
+import { useParams } from 'react-router-dom';
 
 // A controlled form input -- form values are in state
-export default function EditCard(token, id) {
+export default function EditCard(token) {
+  const [params] = useState(useParams());
+  const [deleteBool, setDeleteBool] = useState(false)
+
+  const clearData = () => {
+    setBgColor('')
+    setBorderColor('')
+    setFontColor('')
+    setFont('')
+    setTitle('')
+    setMessage('')
+  }
+
+  const setData = (userData) => {
+    setBgColor(userData.bg_color)
+    setBorderColor(userData.border_color)
+    setFontColor(userData.font_color)
+    setFont(userData.font)
+    setTitle(userData.title)
+    setMessage(userData.message)
+  }
+
+  useEffect(() => {
+    console.log('load data');
+    async function getUser() {
+      let response = await axios
+        .get(`https://quokka-cards.herokuapp.com/cards/${params.id}`, {
+          headers: {
+            Authorization: `Token ${token.token}`,
+          },
+        });
+      let resJson = await response.data;
+      setData(resJson);
+    }
+    getUser();
+  }, []);
 
   const [bgColor, setBgColor] = useState("White");
   const [borderColor, setBorderColor] = useState("Black");
@@ -35,14 +71,31 @@ export default function EditCard(token, id) {
     console.log(event.target.value);
     setMessage(event.target.value);
   };
-  const [error, setError] = useState(null);
-  console.log(error);
+  const handleDelete = (event) => {
+    axios
+      .delete(
+        `https://quokka-cards.herokuapp.com/cards/${params.id}`,
+
+        {
+          headers: {
+            Authorization: `Token ${token.token}`,
+          },
+        }
+      )
+      .then(console.log)
+      .catch((error) => {
+
+      });
+    clearData()
+    setMessage('Card Deleted!')
+    setDeleteBool(false)
+  }
   const handleSubmit = (event) => {
     console.log(token.token);
     console.log(title, message, font, fontColor, bgColor, borderColor);
     axios
-      .post(
-        "https://quokka-cards.herokuapp.com/cards/new/",
+      .patch(
+        `https://quokka-cards.herokuapp.com/cards/${params.id}`,
         {
           title: title,
           message: message,
@@ -59,8 +112,10 @@ export default function EditCard(token, id) {
       )
       .then(console.log)
       .catch((error) => {
-        setError(error.message);
+
       });
+    clearData()
+    setMessage('Card edit complete!')
   };
 
   return (
@@ -187,6 +242,12 @@ export default function EditCard(token, id) {
             <button onClick={handleSubmit} className="button submit">
               Submit
             </button>
+            {deleteBool ? <button onClick={handleDelete} className="button submit">
+              Are you sure
+            </button>
+              : <button onClick={() => setDeleteBool(true)} className="button submit">
+                Delete
+              </button>}
           </div>
         </div>
         <div className="preview">

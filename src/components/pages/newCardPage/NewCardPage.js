@@ -1,9 +1,18 @@
+
 import { useState } from "react";
 import axios from "axios";
 import './newCardPage.css'
 
 // A controlled form input -- form values are in state
 export default function NewCard(token) {
+  const clearData = () => {
+    setBgColor('')
+    setBorderColor('')
+    setFontColor('')
+    setFont('')
+    setTitle('')
+    setMessage('')
+  }
   const [bgColor, setBgColor] = useState("White");
   const [borderColor, setBorderColor] = useState("Black");
   const [fontColor, setFontColor] = useState("Black");
@@ -62,11 +71,12 @@ export default function NewCard(token) {
       .catch((error) => {
         setError(error.message);
       });
+    clearData()
+    setMessage('Card Submitted!')
   };
 
   return (
-    <>
-    <div className="new-card-container">
+    <div>
       <div className="previewBox">
         <div className="options">
           <div className="input-field">
@@ -194,8 +204,8 @@ export default function NewCard(token) {
         <div className="preview">
           <div className="card">
             <div className={`preview-border bg-${bgColor} border-${borderColor}`}>
-              <div className={`card-title has-text-centered  ${fontColor} ${font}`}>{title}</div>
-              <div className={`card-message has-text-centered ${fontColor} ${font} messageBox`}>{message}</div>
+              <div className={`card-title ${fontColor} ${font}`}>{title}</div>
+              <div className={`${fontColor} ${font} messageBox`}>{message}</div>
             </div>
           </div>
         </div>{" "}
@@ -203,7 +213,6 @@ export default function NewCard(token) {
       </div>
       <div></div>
     </div>
-     </>
   );
- 
 };
+
