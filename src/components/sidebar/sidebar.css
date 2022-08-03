@@ -20,7 +20,7 @@
 .sidebar-title {
     position: fixed;
     font-weight: 750;
-    border-bottom: 2px solid
+    font-size: 1.15rem;
 }
 
 .sidebar-list-container{
@@ -30,4 +30,11 @@
 
 .list {
     padding: 8px 0px;
+}
+
+.term {
+    margin-top: 15px;
+    margin-bottom: 10px;
+    padding: 10px;
+    /* border-radius: 10px; */
 }

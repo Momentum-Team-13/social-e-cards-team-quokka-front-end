@@ -14,6 +14,7 @@ export default function Sidebar({ userNames, title }) {
                         <input
                             placeholder="Search for a user"
                             onChange={(event) => setQuery(event.target.value)}
+                            className="term input"
                         />
                         {userNames
                             .filter((user) => {
