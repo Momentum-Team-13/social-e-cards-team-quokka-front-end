@@ -4,13 +4,14 @@
 
 .card-list-container{
     margin-left: 150px;
-    margin-top: 50px;
+    margin-top: 90px;
 }
 
 .card-list {
     border: 2px ;
     border-radius: 10px;
-    margin-left: 100px;
+    margin-left: 150px;
+    margin-right: 50px;
     display: flex;
     flex-direction: column;
 }
@@ -23,7 +24,6 @@
 .card-text {
     padding: 1.5rem;
     height: 400px;
-    width: 85%;
 }
 /* CLASSES FROM API */
 /* Fonts */

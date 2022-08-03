@@ -1,11 +1,15 @@
 import Sidebar from "../../sidebar/Sidebar";
 import { Link } from "react-router-dom";
+import "../../card.css";
+import "../../sidebar/sidebar.css";
+
 
 export default function MyCards({ token, myCardList, followers }) {
     const sidebarTitle = "People Who Follow Me"
     return (
         <>
             <Sidebar userNames={followers} title={sidebarTitle}/>
+            <div className="card-list-container">
                     <div className="card-list">
                         {myCardList.map((card) => (
                             <div className="card messageBox">
@@ -42,7 +46,7 @@ export default function MyCards({ token, myCardList, followers }) {
                             </div>
                         ))}
                     </div>
-                
+                </div>
         
         </>
     );

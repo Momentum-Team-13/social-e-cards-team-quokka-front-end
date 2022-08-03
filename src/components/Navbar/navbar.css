@@ -1,8 +1,9 @@
-nav{
+.nav{
   background:rgb(65, 168, 205);
-  height: 80px;
+  height: 120px;
   width: 100%;
   position: fixed; 
+  z-index: +1;
 }
 
 .navlogo{
@@ -28,4 +29,11 @@ nav ul{
   color: white;
   text-transform: uppercase;
   text-decoration: none;
+}
+
+.nav-bottom-padding {
+  margin-top: 30px;
+  background-color: white;
+  height: 20px;
+  z-index: +1;
 }
