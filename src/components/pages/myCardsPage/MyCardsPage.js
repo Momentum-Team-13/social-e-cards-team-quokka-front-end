@@ -17,12 +17,12 @@ export default function MyCards({ token, myCardList, followers }) {
                                     className={`card-text bg-${card.bg_color} border-${card.border_color}`}
                                 >
                                     <div
-                                        className={`has-text-centered card-title ${card.font_color} ${card.font}`}
+                                        className={`card-title has-text-centered  ${card.font_color} ${card.font}`}
                                     >
                                         {card.title}
                                     </div>
                                     <div
-                                        className={`has-text-centered ${card.font_color} ${card.font}`}
+                                        className={`card-message has-text-centered ${card.font_color} ${card.font}`}
                                     >
                                         {card.message}
                                     </div>
