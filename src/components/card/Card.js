@@ -20,7 +20,7 @@ function Card({ cards }) {
                         </div>
 
                         <Link
-                            to={`/user/${card.username}`}
+                            to={`/users/${card.user_id}`}
                             className="btn btn-primary"
                         >
                             Author: {card.username}

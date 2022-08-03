@@ -1,4 +1,5 @@
 import "./sidebar.css";
+import { Link } from "react-router-dom";
 
 export default function Sidebar({ userNames, title }) {
     return (
@@ -7,8 +8,12 @@ export default function Sidebar({ userNames, title }) {
                 <div className="sidebar-title">{title}</div>
                 <div className="sidebar-list-container">
                     {userNames.map((user) => (
-                        <div className="list">{user.id}</div>
-                        // when BE changes follow model to include username, use user.username instead of user.id
+                        <div>
+                            {console.log(user)}
+                            <Link to={`/users/${user.id}`} className="list">
+                                {user.username}
+                            </Link>
+                        </div>
                     ))}
                 </div>
             </div>
