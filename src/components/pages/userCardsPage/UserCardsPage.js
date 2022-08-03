@@ -4,14 +4,10 @@ import Card from "../../card/Card";
 // import { useParams } from 'react-router-dom'
 
 export default function UserCards() {
-    return (
-        <div className="container">
-            <div></div>
-            <Sidebar  />
-            <div>
-                All Cards
-                <Card  />
-            </div>
-        </div>
-    );
+  return (
+    <>
+      <Sidebar />
+      <Card />
+    </>
+  );
 }
