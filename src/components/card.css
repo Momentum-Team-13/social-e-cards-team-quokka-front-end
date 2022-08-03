@@ -70,7 +70,8 @@
     color: black;
 }
 .Blue {
-    color: blue;
+    /* color: blue; */
+    color: rgb(65, 168, 205)
 }
 .Green {
     color: green;
@@ -98,7 +99,8 @@
     background-color: black;
 }
 .bg-Blue {
-    background-color: blue;
+    /* background-color: blue; */
+    background-color: rgb(65, 168, 205);
 }
 .bg-Green {
     background-color: green;
@@ -126,7 +128,8 @@
     border: 2px red solid;
 }
 .border-Blue {
-    border: 2px blue solid;
+    /* border: 2px blue solid; */
+    border: 2px rgb(65, 168, 205) solid;
 }
 .border-Green {
     border: 2px green solid;
