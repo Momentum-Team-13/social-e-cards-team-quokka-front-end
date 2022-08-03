@@ -4,7 +4,8 @@
   width: 100%;
   position: fixed; 
   z-index: +1;
-  padding-top: 20px;
+  padding-top: 15px;
+  padding-bottom: 10px;
 }
 
 .navlogo{
@@ -26,14 +27,14 @@ nav ul{
 
 .navlink, .navlink:hover, .navlink:focus, .navlink:active {
   font-size: 17px;
-  margin: 0 5px;
+  margin: 0 10px;
   color: white;
   text-transform: uppercase;
   text-decoration: none;
 }
 
 .nav-bottom-padding {
-  margin-top: 30px;
+  margin-top: 15px;
   background-color: white;
   height: 20px;
   z-index: +1;
