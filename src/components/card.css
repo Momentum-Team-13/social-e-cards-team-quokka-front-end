@@ -24,10 +24,21 @@
     height: 400px;
 }
 .card-title {
-    font-size: 2rem;
+    font-size: 2.5rem;
     /* border: 2px purple solid; */
 }
 
+.card-message {
+    font-size: 1.5rem;
+}
+
+.card-message.amatic {
+    font-size: 2rem;
+}
+
+.card-title.amatic {
+    font-size: 3rem;
+}
 
 /* CLASSES FROM API */
 /* Fonts */
@@ -36,10 +47,11 @@
 }
 .kaushan {
     font-family: 'Kaushan Script', cursive;
+    /* font-size: 1.5rem; */
 }
 .amatic {
     font-family: 'Amatic SC', cursive;
-    /* font-size: 2rem; */
+    /* font-size: 1.75rem; */
 }
 .bungee {
     font-family: 'Bungee Shade', cursive;
@@ -49,9 +61,11 @@
 }
 .julius {
     font-family: 'Julius Sans One', sans-serif;
+    font-weight: bold;
 }
 .roboto {
     font-family: 'Roboto', sans-serif;
+
 }
 .spectral {
     font-family: 'Spectral', serif;

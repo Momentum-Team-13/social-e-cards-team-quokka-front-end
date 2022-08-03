@@ -14,7 +14,7 @@ function Card({ cards }) {
                             >
                                 {card.title}
                             </div>
-                            <div className={`has-text-centered ${card.font_color} ${card.font}`}>
+                            <div className={`card-message has-text-centered ${card.font_color} ${card.font}`}>
                                 {card.message}
                             </div>
                         </div>
