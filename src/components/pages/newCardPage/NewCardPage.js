@@ -194,8 +194,8 @@ export default function NewCard(token) {
         <div className="preview">
           <div className="card">
             <div className={`preview-border bg-${bgColor} border-${borderColor}`}>
-              <div className={`card-title ${fontColor} ${font}`}>{title}</div>
-              <div className={`${fontColor} ${font} messageBox`}>{message}</div>
+              <div className={`has-text-centered card-title ${fontColor} ${font}`}>{title}</div>
+              <div className={`has-text-centered ${fontColor} ${font} messageBox`}>{message}</div>
             </div>
           </div>
         </div>{" "}
