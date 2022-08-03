@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from 'react-router-dom';
 
-// A controlled form input -- form values are in state
 export default function EditCard(token) {
   const [params] = useState(useParams());
   const [deleteBool, setDeleteBool] = useState(false)
@@ -38,7 +37,7 @@ export default function EditCard(token) {
       setData(resJson);
     }
     getUser();
-  }, []);
+  }, [params.id, token.token]);
 
   const [bgColor, setBgColor] = useState("White");
   const [borderColor, setBorderColor] = useState("Black");

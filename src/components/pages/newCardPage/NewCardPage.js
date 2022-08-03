@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import axios from "axios";
 import './newCardPage.css'
@@ -46,7 +45,7 @@ export default function NewCard(token) {
     setMessage(event.target.value);
   };
   const [error, setError] = useState(null);
-
+  console.log(error)
   const handleSubmit = (event) => {
     console.log(token.token);
     console.log(title, message, font, fontColor, bgColor, borderColor);
