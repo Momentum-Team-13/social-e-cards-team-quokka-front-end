@@ -16,6 +16,11 @@
     height: 400px;
     width: 85%;
 }
+
+.icon {
+    border: 2px red solid;
+}
+
 /* CLASSES FROM API */
 /* Fonts */
 .cormorant {
