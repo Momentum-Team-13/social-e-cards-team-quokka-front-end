@@ -22,6 +22,7 @@ function App() {
     const [following, setFollowing] = useState([]);
     const [followers, setFollowers] = useState([]);
     const [allUsers, setAllUsers] = useState([]);
+    // const [userCardList, setUserCardList] = useState([]);
 
     const setAuth = (username, token) => {
         setUsername(username);
@@ -98,6 +99,7 @@ function App() {
             });
     }, [setAllUsers]);
 
+
     const handleLogout = () => {
         // send request to log out on the server
         console.log(token, username);
@@ -131,6 +133,7 @@ function App() {
                         <Home
                             followCardList={followCardList}
                             following={following}
+                            // handleUserCardList={handleUserCardList}
                         />
                     }
                 />
@@ -157,14 +160,13 @@ function App() {
                 <Route path="/edit/">
                     <Route path=":id" element={<EditCard token={token} />} />
                 </Route>
-                <Route path="/user/">
+                <Route path="/users/">
                     <Route
                         path=":id"
                         element={
                             <UserCards
-                                // Are we going to need a separate API request here? since we won't have the right primary key to add to the profile until the user's name is clicked?
-                                // What do we want in the sidebar on this page? allUsers? following?
                                 token={token}
+                                allUsers={allUsers}
                             />
                         }
                     />

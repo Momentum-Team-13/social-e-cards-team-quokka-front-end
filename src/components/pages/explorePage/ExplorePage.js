@@ -3,12 +3,12 @@ import "../../card.css";
 import Sidebar from "../../sidebar/Sidebar";
 import "../../sidebar/sidebar.css";
 
-export default function Explore({ allCardList, allUsers }) {
+export default function Explore({ allCardList, allUsers, handleUserCardList }) {
     const sidebarTitle="All QuokkaCards Users"
     return (
-        <div className="container">
+        <>
             <Sidebar userNames={allUsers} title={sidebarTitle}/>
-            <Card cards={allCardList} />
-        </div>
+            <Card cards={allCardList} handleUserCardList={handleUserCardList}/>
+        </>
     );
 }
