@@ -2,9 +2,10 @@ import Sidebar from "../../sidebar/Sidebar";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
-// import Card from "../../card/Card";
-// import { useEffect } from "react";
-// import { useParams } from 'react-router-dom'
+import TimeAgo from "javascript-time-ago";
+import en from "javascript-time-ago/locale/en.json";
+import ReactTimeAgo from "react-time-ago";
+TimeAgo.addDefaultLocale(en);
 
 export default function UserCards({ token, allUsers }) {
     const { id } = useParams();
@@ -48,7 +49,16 @@ export default function UserCards({ token, allUsers }) {
                                     {card.message}
                                 </div>
                             </div>
-                            <div>Author: {card.username}</div>
+                            <div className="card-footer-item">
+                                <div>{card.username}</div>
+                                <div className="">
+                                    <ReactTimeAgo
+                                        date={card.created_at}
+                                        locale="en-US"
+                                        timeStyle="twitter"
+                                    />
+                                </div>
+                            </div>
                         </div>
                     ))}
                 </div>

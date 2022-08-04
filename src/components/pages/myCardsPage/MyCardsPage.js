@@ -1,14 +1,18 @@
+import { useState } from 'react'
 import { Link } from "react-router-dom";
 import "../../card.css";
 import "../../sidebar/sidebar.css";
-import { useState } from 'react'
+import TimeAgo from "javascript-time-ago";
+import en from "javascript-time-ago/locale/en.json";
+import ReactTimeAgo from "react-time-ago";
+TimeAgo.addDefaultLocale(en);
 
 export default function MyCards({ token, myCardList, followers }) {
     const sidebarTitle = "People Who Follow Me";
     console.log(followers);
     const [query, setQuery] = useState("");
     return (
-        <>
+        <div className='page'>
             <div className="sidebar-container">
                 <div className="sidebar">
                     <div className="sidebar-title">{sidebarTitle}</div>
@@ -45,15 +49,6 @@ export default function MyCards({ token, myCardList, followers }) {
                                 </div>
                             ))}
                     </div>
-
-                        {/* {followers.map((user) => (
-                            <div>
-                                {console.log(user)}
-                                <Link to={`/users/${user.user_id}`} className="list">
-                                    {user.user_username}
-                                </Link>
-                            </div>
-                        ))} */}
                     </div>
                 </div>
             </div>
@@ -77,22 +72,33 @@ export default function MyCards({ token, myCardList, followers }) {
                                 </div>
                             </div>
 
-                            <Link
-                                to={`/users/${card.username}`}
-                                className="btn btn-primary"
-                            >
-                                Author: {card.username}
-                            </Link>
-                            <div className="edit-link">
-                                <Link to={`/edit/${card.id}/`} token={token}>
-                                    Edit Card
+                            <div className="card-footer-item">
+                                <Link
+                                    to={`/users/${card.username}`}
+                                    className="btn btn-primary"
+                                >
+                                    {card.username}
                                 </Link>
+                                <div className="edit-link">
+                                    <Link
+                                        to={`/edit/${card.id}/`}
+                                        token={token}
+                                    >
+                                        Edit Card
+                                    </Link>
+                                </div>
+                                <div className="">
+                                    <ReactTimeAgo
+                                        date={card.created_at}
+                                        locale="en-US"
+                                        timeStyle="twitter"
+                                    />
+                                </div>
                             </div>
-                            {/* add profile link to user */}
                         </div>
                     ))}
                 </div>
             </div>
-        </>
+        </div>
     );
 }

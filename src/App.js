@@ -4,7 +4,7 @@ import Home from "./components/pages/homePage/HomePage";
 import NewCard from "./components/pages/newCardPage/NewCardPage";
 import MyCards from "./components/pages/myCardsPage/MyCardsPage";
 import Explore from "./components/pages/explorePage/ExplorePage";
-import EditCard from "./components/EditCard";
+import EditCard from "./components/pages/editCardPage/EditCard";
 import UserCards from "./components/pages/userCardsPage/UserCardsPage";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import LogIn from "./components/pages/logInPage/LogInPage";
@@ -12,6 +12,7 @@ import "bulma/css/bulma.min.css";
 import useLocalStorageState from "use-local-storage-state";
 import axios from "axios";
 import { useEffect, useState } from "react";
+
 
 function App() {
     const [token, setToken] = useLocalStorageState("quokkaToken", null);

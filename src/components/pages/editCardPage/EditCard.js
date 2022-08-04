@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from 'react-router-dom';
 
+
+
 export default function EditCard(token) {
   const [params] = useState(useParams());
   const [deleteBool, setDeleteBool] = useState(false)
@@ -118,8 +120,8 @@ export default function EditCard(token) {
   };
 
   return (
-    <div>
-      <div className="previewBox">
+    <div className="previewBox">
+      <div className="new-card-container">
         <div className="options">
           <div className="input-field">
             <label>Title</label>
@@ -251,7 +253,7 @@ export default function EditCard(token) {
         </div>
         <div className="preview">
           <div className="card">
-            <div className={`card-content bg-${bgColor} border-${borderColor}`}>
+            <div className={`card-content card-text bg-${bgColor} border-${borderColor}`}>
               <div className={`card-title ${fontColor} ${font}`}>{title}</div>
               <div className={`${fontColor} ${font} messageBox`}>{message}</div>
             </div>
