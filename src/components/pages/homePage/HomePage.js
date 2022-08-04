@@ -2,15 +2,45 @@ import "./homePage.css";
 import Card from "../../card/Card";
 import "../../sidebar/sidebar.css";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 export default function Home({
     followCardList,
     following,
     handleUserCardList,
+    setFollowCardList,
+    setFollowing,
+    token
 }) {
     const sidebarTitle = "People I follow";
     const [query, setQuery] = useState("");
+
+    useEffect(() => {
+        axios
+            .get("https://quokka-cards.herokuapp.com/cards/timeline", {
+                headers: {
+                    Authorization: `Token ${token}`,
+                },
+            })
+            .then((res) => {
+                // console.log(res.data.results);
+                setFollowCardList(res.data.results);
+            });
+    }, [token, setFollowCardList]);
+
+    useEffect(() => {
+        axios
+            .get("https://quokka-cards.herokuapp.com/following/", {
+                headers: {
+                    Authorization: `Token ${token}`,
+                },
+            })
+            .then((res) => {
+                // console.log(res.data.results);
+                setFollowing(res.data.results);
+            });
+    }, [token, setFollowing]);
 
     return (
         <div>
