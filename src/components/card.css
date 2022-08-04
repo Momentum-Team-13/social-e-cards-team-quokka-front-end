@@ -1,6 +1,7 @@
 .card {
     margin: 25px;
     width: 600px;
+    border-radius: 10px;
     /* border: 2px grey solid; */
 }
 
@@ -21,6 +22,7 @@
     flex-direction: column;
     /* border: 2px blue solid; */
 }
+
 .card-text {
     padding: 1.5rem;
     /* border: 4px pink solid; */

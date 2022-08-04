@@ -9,21 +9,22 @@ import ReactTimeAgo from "react-time-ago";
 TimeAgo.addDefaultLocale(en);
 
 
-export default function UserCards({ token, allUsers, following }) {
+export default function UserCards({ token, allUsers, following, setFollowing }) {
   const { id } = useParams();
   // console.log({id})
   const [userCardList, setUserCardList] = useState([]);
   const [error, setError] = useState(null);
 
-  const followingId = []
   
-  following.map((user) => (
-    followingId.push(user.following_id)
-  ))
+  // following.map((user) => (
+  //   setFollowingArray(user.following_id)
+  //   followingId.push(user.following_id)
+  // ))
 
+  
   const handleFollow = (event) => {
     console.log(`${id}`)
-    console.log(followingId.includes(parseInt(`${id}`)))
+    // console.log(followingId.includes(parseInt(`${id}`)))
     event.preventDefault();
     setError(null);
     axios
@@ -36,9 +37,12 @@ export default function UserCards({ token, allUsers, following }) {
             Authorization: `Token ${token}`
     },
 })
-      .then(() => {
+      .then((res) => {
         // the following console.log is so that the variable error is used on the page and we stop getting warnings about unused variables so our app will deploy on Netlify
         console.log(error);
+        console.log(res.data)
+        // setFollowing(following + id) include new following id
+        setFollowing([...following, {id}])
       })
       .catch((error) => {
         setError(error.message);
@@ -47,9 +51,9 @@ export default function UserCards({ token, allUsers, following }) {
   };
 
   const handleUnfollow = (event) => {
-    console.log(followingId)
+    // console.log(followingId)
     console.log(`${id}`)
-    console.log(followingId.includes(parseInt(`${id}`)))
+    // console.log(followingId.includes(parseInt(`${id}`)))
     event.preventDefault();
     setError(null);
     axios
@@ -80,13 +84,13 @@ export default function UserCards({ token, allUsers, following }) {
       .then((res) => {
         setUserCardList(res.data.results);
       });
-  }, []);
+  }, [id, token]);
 
   const sidebarTitle = "All QuokkaCards Users";
   return (
     <>
       <Sidebar userNames={allUsers} title={sidebarTitle} />
-      {followingId.includes(parseInt(`${id}`)) === false ? (
+      {following.includes(parseInt(`${id}`)) === false ? (
         <div className="follow-button-container"><button className="follow-button" onClick={handleFollow}>Follow</button></div>
       ) : (
         <div className="follow-button-container"><button className="follow-button" onClick={handleUnfollow}>Unfollow</button></div>
