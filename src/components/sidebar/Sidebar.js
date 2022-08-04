@@ -11,6 +11,7 @@ export default function Sidebar({ userNames, title }) {
                 <div className="sidebar-title">{title}</div>
                 <div className="sidebar-list-container">
                     <div className="search">
+                        <label className="visually-hidden">Search for a User</label>
                         <input
                             placeholder="Search for a user"
                             onChange={(event) => setQuery(event.target.value)}
