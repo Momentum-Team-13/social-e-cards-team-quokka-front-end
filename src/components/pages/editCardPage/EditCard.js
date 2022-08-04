@@ -253,7 +253,7 @@ export default function EditCard(token) {
         </div>
         <div className="preview">
           <div className="card">
-            <div className={`card-content bg-${bgColor} border-${borderColor}`}>
+            <div className={`card-content card-text bg-${bgColor} border-${borderColor}`}>
               <div className={`card-title ${fontColor} ${font}`}>{title}</div>
               <div className={`${fontColor} ${font} messageBox`}>{message}</div>
             </div>
