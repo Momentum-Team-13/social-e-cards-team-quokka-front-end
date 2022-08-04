@@ -1,24 +1,43 @@
 .card {
     margin: 25px;
-}
-.card-list {
-    /* margin: 25px; */
-    border: 2px green solid;
-}
-.card-text {
-    padding: 1.5rem;
-}
-.card-title {
-    font-size: 2rem;
-}
-.card-text {
-    padding: 1.5rem;
-    height: 400px;
-    width: 85%;
+    /* border: 2px grey solid; */
 }
 
-.icon {
-    border: 2px red solid;
+.card-list-container{
+    margin-left: 150px;
+    margin-top: 90px;
+    /* border: 2px green solid; */
+}
+
+.card-list {
+    border: 2px ;
+    border-radius: 10px;
+    margin-left: 150px;
+    margin-right: 50px;
+    display: flex;
+    flex-direction: column;
+    /* border: 2px blue solid; */
+}
+.card-text {
+    padding: 1.5rem;
+    /* border: 4px pink solid; */
+    height: 400px;
+}
+.card-title {
+    font-size: 2.5rem;
+    /* border: 2px purple solid; */
+}
+
+.card-message {
+    font-size: 1.5rem;
+}
+
+.card-message.amatic {
+    font-size: 2rem;
+}
+
+.card-title.amatic {
+    font-size: 3rem;
 }
 
 /* CLASSES FROM API */
@@ -28,9 +47,11 @@
 }
 .kaushan {
     font-family: 'Kaushan Script', cursive;
+    /* font-size: 1.5rem; */
 }
 .amatic {
     font-family: 'Amatic SC', cursive;
+    /* font-size: 1.75rem; */
 }
 .bungee {
     font-family: 'Bungee Shade', cursive;
@@ -40,9 +61,11 @@
 }
 .julius {
     font-family: 'Julius Sans One', sans-serif;
+    font-weight: bold;
 }
 .roboto {
     font-family: 'Roboto', sans-serif;
+
 }
 .spectral {
     font-family: 'Spectral', serif;
@@ -61,7 +84,8 @@
     color: black;
 }
 .Blue {
-    color: blue;
+    /* color: blue; */
+    color: rgb(65, 168, 205)
 }
 .Green {
     color: green;
@@ -89,7 +113,8 @@
     background-color: black;
 }
 .bg-Blue {
-    background-color: blue;
+    /* background-color: blue; */
+    background-color: rgb(65, 168, 205);
 }
 .bg-Green {
     background-color: green;
@@ -117,7 +142,8 @@
     border: 2px red solid;
 }
 .border-Blue {
-    border: 2px blue solid;
+    /* border: 2px blue solid; */
+    border: 2px rgb(65, 168, 205) solid;
 }
 .border-Green {
     border: 2px green solid;
