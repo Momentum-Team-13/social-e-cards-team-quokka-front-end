@@ -12,7 +12,7 @@ export default function MyCards({ token, myCardList, followers }) {
     console.log(followers);
     const [query, setQuery] = useState("");
     return (
-        <>
+        <div className='page'>
             <div className="sidebar-container">
                 <div className="sidebar">
                     <div className="sidebar-title">{sidebarTitle}</div>
@@ -99,6 +99,6 @@ export default function MyCards({ token, myCardList, followers }) {
                     ))}
                 </div>
             </div>
-        </>
+        </div>
     );
 }
