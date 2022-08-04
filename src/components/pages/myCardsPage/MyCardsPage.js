@@ -28,23 +28,23 @@ export default function MyCards({ token, myCardList, followers }) {
                         {followers
                             .filter((user) => {
                                 if (query === "") {
-                                    return user.username;
+                                    return user.user_username;
                                 } else if (
-                                    user.username
+                                    user.user_username
                                         .toLowerCase()
                                         .includes(query.toLocaleLowerCase())
                                 ) {
-                                    return user.username;
+                                    return user.user_username;
                                 }
                             })
                             .map((user) => (
                                 <div>
                                     {console.log(user)}
                                     <Link
-                                        to={`/users/${user.id}`}
+                                        to={`/users/${user.user_id}`}
                                         className="list"
                                     >
-                                        {user.username}
+                                        {user.user_username}
                                     </Link>
                                 </div>
                             ))}
