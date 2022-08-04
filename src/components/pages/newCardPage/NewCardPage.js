@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import "./newCardPage.css";
+import '../../card.css';
 
 // A controlled form input -- form values are in state
 export default function NewCard({ token, setMyCardsList, myCardsList }) {
@@ -208,8 +209,8 @@ export default function NewCard({ token, setMyCardsList, myCardsList }) {
           </div>
         </div>
         <div className="preview">
-          <div className="card">
-            <div className={`preview-border bg-${bgColor} border-${borderColor}`}>
+          <div className="card ">
+            <div className={`preview-border card-text bg-${bgColor} border-${borderColor}`}>
               <div className={`card-title has-text-centered  ${fontColor} ${font}`}>{title}</div>
               <div className={`card-message has-text-centered ${fontColor} ${font} messageBox`}>{message}</div>
             </div>

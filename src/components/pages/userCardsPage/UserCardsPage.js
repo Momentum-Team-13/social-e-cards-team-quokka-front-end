@@ -70,6 +70,7 @@ export default function UserCards({
             .then(() => {
                 // the following console.log is so that the variable error is used on the page and we stop getting warnings about unused variables so our app will deploy on Netlify
                 console.log(error);
+                // ????? do we need to call setFollowing again so the component re-renders after the button is clicked?
             })
             .catch((error) => {
                 setError(error.message);
@@ -90,7 +91,7 @@ export default function UserCards({
                 setCurrentProfile(res.data.results[0].username);
                 console.log(currentProfile);
             });
-    }, [id, token, currentProfile]);
+    }, [id, token, currentProfile, setFollowing]);
 
     const sidebarTitle = "All QuokkaCards Users";
     return (
