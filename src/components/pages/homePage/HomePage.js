@@ -32,23 +32,23 @@ export default function Home({
                             {following
                                 .filter((user) => {
                                     if (query === "") {
-                                        return user.username;
+                                        return user.following_username;
                                     } else if (
-                                        user.username
+                                        user.following_username
                                             .toLowerCase()
                                             .includes(query.toLocaleLowerCase())
                                     ) {
-                                        return user.username;
+                                        return user.following_username;
                                     }
                                 })
                                 .map((user) => (
                                     <div>
                                         {console.log(user)}
                                         <Link
-                                            to={`/users/${user.id}`}
+                                            to={`/users/${user.following_id}`}
                                             className="list"
                                         >
-                                            {user.username}
+                                            {user.following_username}
                                         </Link>
                                     </div>
                                 ))}
