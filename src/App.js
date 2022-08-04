@@ -37,7 +37,7 @@ function App() {
                 },
             })
             .then((res) => {
-                console.log(res.data.results);
+                // console.log(res.data.results);
                 setMyCardList(res.data.results);
             });
     }, [token, setMyCardList]);
@@ -50,7 +50,7 @@ function App() {
                 },
             })
             .then((res) => {
-                console.log(res.data.results);
+                // console.log(res.data.results);
                 setFollowCardList(res.data.results);
             });
     }, [token, setFollowCardList]);
@@ -72,7 +72,7 @@ function App() {
                 },
             })
             .then((res) => {
-                console.log(res.data.results);
+                // console.log(res.data.results);
                 setFollowing(res.data.results);
             });
     }, [token, setFollowing]);
@@ -85,7 +85,7 @@ function App() {
                 },
             })
             .then((res) => {
-                console.log(res.data.results);
+                // console.log(res.data.results);
                 setFollowers(res.data.results);
             });
     }, [token, setFollowers]);

@@ -1,24 +1,59 @@
 import { Link } from "react-router-dom";
 import "../../card.css";
 import "../../sidebar/sidebar.css";
+import { useState } from 'react'
 
 export default function MyCards({ token, myCardList, followers }) {
     const sidebarTitle = "People Who Follow Me";
     console.log(followers);
+    const [query, setQuery] = useState("");
     return (
         <>
             <div className="sidebar-container">
                 <div className="sidebar">
                     <div className="sidebar-title">{sidebarTitle}</div>
                     <div className="sidebar-list-container">
-                        {followers.map((user) => (
+
+                    <div className="search">
+                        <label className="visually-hidden">Search for a User</label>
+                        <input
+                            placeholder="Search for a user"
+                            onChange={(event) => setQuery(event.target.value)}
+                            className="term input"
+                        />
+                        {followers
+                            .filter((user) => {
+                                if (query === "") {
+                                    return user.username;
+                                } else if (
+                                    user.username
+                                        .toLowerCase()
+                                        .includes(query.toLocaleLowerCase())
+                                ) {
+                                    return user.username;
+                                }
+                            })
+                            .map((user) => (
+                                <div>
+                                    {console.log(user)}
+                                    <Link
+                                        to={`/users/${user.id}`}
+                                        className="list"
+                                    >
+                                        {user.username}
+                                    </Link>
+                                </div>
+                            ))}
+                    </div>
+
+                        {/* {followers.map((user) => (
                             <div>
                                 {console.log(user)}
                                 <Link to={`/users/${user.user_id}`} className="list">
                                     {user.user_username}
                                 </Link>
                             </div>
-                        ))}
+                        ))} */}
                     </div>
                 </div>
             </div>

@@ -43,7 +43,7 @@ export default function Navbar({ handleLogout }) {
                         </div>
                     </li>
                 </ul>
-                {/* <div className="nav-bottom-padding"></div> */}
+                <div className="nav-bottom-padding"></div>
             </nav>
         
         // <div className="header">

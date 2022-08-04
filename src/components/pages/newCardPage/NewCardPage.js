@@ -4,6 +4,14 @@ import './newCardPage.css'
 
 // A controlled form input -- form values are in state
 export default function NewCard(token) {
+  const clearData = () => {
+    setBgColor('')
+    setBorderColor('')
+    setFontColor('')
+    setFont('')
+    setTitle('')
+    setMessage('')
+  }
   const [bgColor, setBgColor] = useState("White");
   const [borderColor, setBorderColor] = useState("Black");
   const [fontColor, setFontColor] = useState("Black");
@@ -37,7 +45,7 @@ export default function NewCard(token) {
     setMessage(event.target.value);
   };
   const [error, setError] = useState(null);
-
+  console.log(error)
   const handleSubmit = (event) => {
     console.log(token.token);
     console.log(title, message, font, fontColor, bgColor, borderColor);
@@ -62,6 +70,8 @@ export default function NewCard(token) {
       .catch((error) => {
         setError(error.message);
       });
+    clearData()
+    setMessage('Card Submitted!')
   };
 
   return (
@@ -207,3 +217,4 @@ export default function NewCard(token) {
   );
  
 };
+

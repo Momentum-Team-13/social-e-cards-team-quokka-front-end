@@ -1,7 +1,8 @@
 import Sidebar from "../../sidebar/Sidebar";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
+import './userCardsPage.css'
 // import Card from "../../card/Card";
 // import { useEffect } from "react";
 // import { useParams } from 'react-router-dom'
@@ -19,7 +20,6 @@ export default function UserCards({ token, allUsers, following }) {
   ))
 
   const handleFollow = (event) => {
-    console.log(followingId)
     console.log(`${id}`)
     console.log(followingId.includes(parseInt(`${id}`)))
     event.preventDefault();
@@ -84,8 +84,14 @@ export default function UserCards({ token, allUsers, following }) {
   return (
     <>
       <Sidebar userNames={allUsers} title={sidebarTitle} />
+      {followingId.includes(parseInt(`${id}`)) === false ? (
+        <div className="follow-button-container"><button className="follow-button" onClick={handleFollow}>Follow</button></div>
+      ) : (
+        <div className="follow-button-container"><button className="follow-button" onClick={handleUnfollow}>Unfollow</button></div>
+      )}
       <div className="card-list-container">
         <div className="card-list">
+          {userCardList.length === 0 ? (<div className="card messageBox">No Cards to Display!</div>) : ("")}
           {userCardList.map((card) => (
             <div className="card messageBox">
               <div
@@ -107,11 +113,6 @@ export default function UserCards({ token, allUsers, following }) {
           ))}
         </div>
       </div>
-      {followingId.includes(parseInt(`${id}`)) === false ? (
-        <button onClick={handleFollow} className="follow-button">Follow</button>
-      ) : (
-        <button onClick={handleUnfollow} className="follow-button">Unfollow</button>
-      )}
     </>
   );
 }
