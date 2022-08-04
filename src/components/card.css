@@ -1,11 +1,14 @@
 .card {
     margin: 25px;
+    width: 600px;
     /* border: 2px grey solid; */
 }
 
 .card-list-container{
     margin-left: 150px;
     margin-top: 90px;
+    display: flex;
+    justify-content: center;
     /* border: 2px green solid; */
 }
 
@@ -21,7 +24,9 @@
 .card-text {
     padding: 1.5rem;
     /* border: 4px pink solid; */
-    height: 400px;
+    height: 350px;
+    border-radius: 10px;
+    word-break: keep-all;
 }
 .card-title {
     font-size: 2.5rem;
@@ -38,6 +43,10 @@
 
 .card-title.amatic {
     font-size: 3rem;
+}
+
+.card-footer-item {
+    justify-content: space-between;
 }
 
 /* CLASSES FROM API */
@@ -75,88 +84,88 @@
 }
 /* Font Colors */
 .White {
-    color: white;
+    color: #FFFFFC;
 }
 .Red {
-    color: red;
+    color: #D00000;
 }
 .Black {
-    color: black;
+    color: #000814;
 }
 .Blue {
     /* color: blue; */
     color: rgb(65, 168, 205)
 }
 .Green {
-    color: green;
+    color: #7EBC89;
 }
 .Yellow {
-    color: yellow;
+    color: #FFBA08;
 }
 .Orange {
-    color: orange;
+    color: #E85d04;
 }
 .Purple {
-    color: purple;
+    color: #88498F;
 }
 .Brown {
-    color: brown;
+    color: #481d24;
 }
 /* Background Colors */
 .bg-White {
-    background-color: white;
+    background-color: #FFFFFC;
 }
 .bg-Red {
-    background-color: red;
+    background-color: #D00000;
 }
 .bg-Black {
-    background-color: black;
+    background-color: #000814;
 }
 .bg-Blue {
     /* background-color: blue; */
     background-color: rgb(65, 168, 205);
 }
 .bg-Green {
-    background-color: green;
+    background-color: #7EBC89;
 }
 .bg-Yellow {
-    background-color: yellow;
+    background-color: #FFBA08;
 }
 .bg-Orange {
-    background-color: orange;
+    background-color: #E85D04;
 }
 .bg-Purple {
-    background-color: purple;
+    background-color:#88498F;
 }
 .bg-Brown {
-    background-color: brown;
+    background-color: #481d24  ;
 }
 /* Border Colors */
 .border-White {
-    border: 2px white solid;
+    border: 5px #FFFFFC solid;
 }
-.border-Black {
-    border: 2px black solid;
+.border-Black { 
+    border: 5px #000814 solid;
 }
 .border-Red {
-    border: 2px red solid;
+    border: 5px #D00000 solid;
 }
 .border-Blue {
-    /* border: 2px blue solid; */
-    border: 2px rgb(65, 168, 205) solid;
+    /* border: 5px blue solid; */
+    border: 5px rgb(65, 168, 205) solid;
 }
 .border-Green {
-    border: 2px green solid;
+    border: 5px #7EBC89 solid;
 }
 .border-Yellow {
-    border: 2px yellow solid;
+    border: 5px #FFBA08 solid;
 }
 .border-Orange {
-    border: 2px orange solid;
+    border: 5px #E85D04 solid;
 }
 .border-Purple {
-    border: 2px purple solid;
+    border: 5px #88498F solid;
 }
 .border-Brown {
-    border: 2px brown solid;
+    border: 5px #481d24   solid;
 }

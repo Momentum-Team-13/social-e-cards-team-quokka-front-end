@@ -1,18 +1,15 @@
 .new-card-container{
-    display: flex;
-}
-
-.previewBox {
-    /* border: 2px red solid; */
     margin-top: 130px;
-    padding: 10px;
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
 
+
+
 .preview-border{
     height: 400px;
     width: 100%;
+    border-radius: 10px;
     /* border: 2px orange solid; */
 }
 
@@ -31,12 +28,17 @@
 
 .card {
     min-width: 200px;
+    word-break: keep-all;
 }
 
 /* .options {
     border: 2px aqua solid;
 } */
 
+/* .messageBox {
+    word-break: keep-all;
+    padding: 1.5rem;
+} */
 
 .submit {
     margin-top: 20px;

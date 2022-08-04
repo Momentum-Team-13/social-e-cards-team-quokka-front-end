@@ -1,26 +1,39 @@
-sidebar.css: 
+Colors: 
+Red
+D00000
+
+Yellow
+FFBA08
+
+Orange
+#E85D04
+
+
+Black
+000814
+
+White
+#FFFFFC
 
 
 
+green options: 
+#21d19f
+#2F4B26
+dark sea green #7EBC89
 
-Sidebar.js: 
-import './sidebar.css'
+brown options
+#481d24  
 
-export default function Sidebar() {
-    return(
-    <div className="container">
-        <div className="sidebar">Sidebar
-            <div className="list">Username</div>
-            <div className="list">Username</div>
-            <div className="list">Username</div>
-            <div className="list">Username</div>
-            <div className="list">Username</div>
-            <div className="list">Username</div>
-            <div className="list">Username</div>
-            <div className="list">Username</div>
-            <div className="list">Username</div>
-            <div className="list">Username</div>
-        </div>
-    </div>
-    )
-}
+
+purple options: 
+#D9BBF9
+#9d4edd
+440381
+88498F
+
+
+colors to add?
+turquoise 55D6BE
+turquoise green BBE1C3
+cotton candy FFC4EB

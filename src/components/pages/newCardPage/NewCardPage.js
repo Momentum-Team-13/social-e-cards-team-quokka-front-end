@@ -1,6 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
-import './newCardPage.css'
+import "./newCardPage.css";
 
 // A controlled form input -- form values are in state
 export default function NewCard(token) {
@@ -17,8 +17,8 @@ export default function NewCard(token) {
   const [fontColor, setFontColor] = useState("Black");
   const [font, setFont] = useState("roboto");
 
-  const [title, setTitle] = useState("");
-  const [message, setMessage] = useState("");
+    const [title, setTitle] = useState("");
+    const [message, setMessage] = useState("");
 
   const handleChangeBgColor = (event) => {
     console.log(event.target.value);
@@ -75,9 +75,8 @@ export default function NewCard(token) {
   };
 
   return (
-    <>
-    <div className="new-card-container">
-      <div className="previewBox">
+    <div className="previewBox">
+      <div className="new-card-container">
         <div className="options">
           <div className="input-field">
             <label>Title</label>

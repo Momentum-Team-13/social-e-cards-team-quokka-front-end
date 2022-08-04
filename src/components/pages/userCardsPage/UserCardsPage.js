@@ -3,9 +3,11 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import './userCardsPage.css'
-// import Card from "../../card/Card";
-// import { useEffect } from "react";
-// import { useParams } from 'react-router-dom'
+import TimeAgo from "javascript-time-ago";
+import en from "javascript-time-ago/locale/en.json";
+import ReactTimeAgo from "react-time-ago";
+TimeAgo.addDefaultLocale(en);
+
 
 export default function UserCards({ token, allUsers, following }) {
   const { id } = useParams();
