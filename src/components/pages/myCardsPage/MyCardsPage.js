@@ -1,5 +1,6 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link } from "react-router-dom";
+import axios from 'axios';
 import "../../card.css";
 import "../../sidebar/sidebar.css";
 import TimeAgo from "javascript-time-ago";
@@ -7,10 +8,39 @@ import en from "javascript-time-ago/locale/en.json";
 import ReactTimeAgo from "react-time-ago";
 TimeAgo.addDefaultLocale(en);
 
-export default function MyCards({ token, myCardList, followers }) {
+export default function MyCards({ token, myCardList, followers, setMyCardList, setFollowers }) {
     const sidebarTitle = "People Who Follow Me";
     console.log(followers);
+    console.log(myCardList);
     const [query, setQuery] = useState("");
+
+    useEffect(() => {
+        axios
+            .get("https://quokka-cards.herokuapp.com/profile", {
+                headers: {
+                    Authorization: `Token ${token}`,
+                },
+            })
+            .then((res) => {
+                // console.log(res.data.results);
+                setMyCardList(res.data.results);
+            });
+    }, [token, setMyCardList]);
+
+    useEffect(() => {
+        axios
+            .get("https://quokka-cards.herokuapp.com/followers/", {
+                headers: {
+                    Authorization: `Token ${token}`,
+                },
+            })
+            .then((res) => {
+                // console.log(res.data.results);
+                setFollowers(res.data.results);
+            });
+    }, [token, setFollowers]);
+
+
     return (
         <div className='page'>
             <div className="sidebar-container">

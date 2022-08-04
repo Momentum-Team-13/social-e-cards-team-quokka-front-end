@@ -3,7 +3,7 @@ import axios from "axios";
 import "./newCardPage.css";
 
 // A controlled form input -- form values are in state
-export default function NewCard(token) {
+export default function NewCard({ token, setMyCardsList, myCardsList }) {
   const clearData = () => {
     setBgColor('')
     setBorderColor('')
@@ -62,7 +62,7 @@ export default function NewCard(token) {
         },
         {
           headers: {
-            Authorization: `Token ${token.token}`,
+            Authorization: `Token ${token}`,
           },
         }
       )
@@ -72,6 +72,13 @@ export default function NewCard(token) {
       });
     clearData()
     setMessage('Card Submitted!')
+    setMyCardsList(...myCardsList, {title: title,
+      message: message,
+      font: font,
+      font_color: fontColor,
+      bg_color: bgColor,
+      border_color: borderColor,} )
+
   };
 
   return (

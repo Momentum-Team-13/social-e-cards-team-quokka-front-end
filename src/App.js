@@ -13,7 +13,6 @@ import useLocalStorageState from "use-local-storage-state";
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-
 function App() {
     const [token, setToken] = useLocalStorageState("quokkaToken", null);
     const [username, setUsername] = useLocalStorageState("quokkaUsername", "");
@@ -30,76 +29,54 @@ function App() {
         setToken(token);
     };
 
-    useEffect(() => {
-        axios
-            .get("https://quokka-cards.herokuapp.com/profile", {
-                headers: {
-                    Authorization: `Token ${token}`,
-                },
-            })
-            .then((res) => {
-                // console.log(res.data.results);
-                setMyCardList(res.data.results);
-            });
-    }, [token, setMyCardList]);
+    // useEffect(() => {
+    //     axios
+    //         .get("https://quokka-cards.herokuapp.com/cards/timeline", {
+    //             headers: {
+    //                 Authorization: `Token ${token}`,
+    //             },
+    //         })
+    //         .then((res) => {
+    //             // console.log(res.data.results);
+    //             setFollowCardList(res.data.results);
+    //         });
+    // }, [token, setFollowCardList]);
 
-    useEffect(() => {
-        axios
-            .get("https://quokka-cards.herokuapp.com/cards/timeline", {
-                headers: {
-                    Authorization: `Token ${token}`,
-                },
-            })
-            .then((res) => {
-                // console.log(res.data.results);
-                setFollowCardList(res.data.results);
-            });
-    }, [token, setFollowCardList]);
 
-    useEffect(() => {
-        axios
-            .get("https://quokka-cards.herokuapp.com/cards", {})
-            .then((res) => {
-                // console.log(res.data.results)
-                setAllCardList(res.data.results);
-            });
-    }, [setAllCardList]);
+    // useEffect(() => {
+    //     axios
+    //         .get("https://quokka-cards.herokuapp.com/following/", {
+    //             headers: {
+    //                 Authorization: `Token ${token}`,
+    //             },
+    //         })
+    //         .then((res) => {
+    //             // console.log(res.data.results);
+    //             setFollowing(res.data.results);
+    //         });
+    // }, [token, setFollowing]);
 
-    useEffect(() => {
-        axios
-            .get("https://quokka-cards.herokuapp.com/following/", {
-                headers: {
-                    Authorization: `Token ${token}`,
-                },
-            })
-            .then((res) => {
-                // console.log(res.data.results);
-                setFollowing(res.data.results);
-            });
-    }, [token, setFollowing]);
+    // useEffect(() => {
+    //     axios
+    //         .get("https://quokka-cards.herokuapp.com/followers/", {
+    //             headers: {
+    //                 Authorization: `Token ${token}`,
+    //             },
+    //         })
+    //         .then((res) => {
+    //             // console.log(res.data.results);
+    //             setFollowers(res.data.results);
+    //         });
+    // }, [token, setFollowers]);
 
-    useEffect(() => {
-        axios
-            .get("https://quokka-cards.herokuapp.com/followers/", {
-                headers: {
-                    Authorization: `Token ${token}`,
-                },
-            })
-            .then((res) => {
-                // console.log(res.data.results);
-                setFollowers(res.data.results);
-            });
-    }, [token, setFollowers]);
-
-    useEffect(() => {
-        axios
-            .get("https://quokka-cards.herokuapp.com/users/", {})
-            .then((res) => {
-                // console.log('user results' + res.data)
-                setAllUsers(res.data.results);
-            });
-    }, [setAllUsers]);
-
+    // useEffect(() => {
+    //     axios
+    //         .get("https://quokka-cards.herokuapp.com/users/", {})
+    //         .then((res) => {
+    //             // console.log('user results' + res.data)
+    //             setAllUsers(res.data.results);
+    //         });
+    // }, [setAllUsers]);
 
     const handleLogout = () => {
         // send request to log out on the server
@@ -134,11 +111,23 @@ function App() {
                         <Home
                             followCardList={followCardList}
                             following={following}
+                            token={token}
+                            setFollowCardList={setFollowCardList}
+                            setFollowing={setFollowing}
                             // handleUserCardList={handleUserCardList}
                         />
                     }
                 />
-                <Route path="/newcard" element={<NewCard token={token} />} />
+                <Route
+                    path="/newcard"
+                    element={
+                        <NewCard
+                            token={token}
+                            myCardList={myCardList}
+                            setMyCardList={setMyCardList}
+                        />
+                    }
+                />
                 <Route
                     path="/mycards"
                     element={
@@ -146,6 +135,8 @@ function App() {
                             token={token}
                             myCardList={myCardList}
                             followers={followers}
+                            setMyCardList={setMyCardList}
+                            setFollowers={setFollowers}
                         />
                     }
                 />
@@ -155,6 +146,8 @@ function App() {
                         <Explore
                             allCardList={allCardList}
                             allUsers={allUsers}
+                            setAllCardList={setAllCardList}
+                            setAllUsers={setAllUsers}
                         />
                     }
                 />
