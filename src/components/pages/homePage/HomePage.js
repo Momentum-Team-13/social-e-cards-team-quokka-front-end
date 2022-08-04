@@ -12,14 +12,14 @@ export default function Home({ followCardList, following, handleUserCardList }) 
                 <div className="sidebar">
                     <div className="sidebar-title">{sidebarTitle}</div>
                     <div className="sidebar-list-container">
-                        {following.map((user) => (
+                         {following.map((user) => (
                             <div>
                                 {console.log(user)}
                                 <Link to={`/users/${user.following_id}`} className="list">
                                     {user.following_username}
                                 </Link>
                             </div>
-                        ))}
+                        ))} 
                     </div>
                 </div>
             </div>

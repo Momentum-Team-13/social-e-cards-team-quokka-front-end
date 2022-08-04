@@ -6,19 +6,22 @@ import { useParams, Link } from "react-router-dom";
 // import { useEffect } from "react";
 // import { useParams } from 'react-router-dom'
 
-export default function UserCards({ token, allUsers }) {
+export default function UserCards({ token, allUsers, following }) {
   const { id } = useParams();
   // console.log({id})
   const [userCardList, setUserCardList] = useState([]);
-  const [toggleFollow, setToggleFollow] = useState(false);
   const [error, setError] = useState(null);
 
-  const toggleFollowButton = () => {
-    setToggleFollow(!toggleFollow);
-  };
+  const followingId = []
+  
+  following.map((user) => (
+    followingId.push(user.following_id)
+  ))
 
   const handleFollow = (event) => {
-    // console.log(regUsername, regPassword);
+    console.log(followingId)
+    console.log(`${id}`)
+    console.log(followingId.includes(parseInt(`${id}`)))
     event.preventDefault();
     setError(null);
     axios
@@ -34,7 +37,6 @@ export default function UserCards({ token, allUsers }) {
       .then(() => {
         // the following console.log is so that the variable error is used on the page and we stop getting warnings about unused variables so our app will deploy on Netlify
         console.log(error);
-        toggleFollowButton();
       })
       .catch((error) => {
         setError(error.message);
@@ -43,7 +45,9 @@ export default function UserCards({ token, allUsers }) {
   };
 
   const handleUnfollow = (event) => {
-    // console.log(regUsername, regPassword);
+    console.log(followingId)
+    console.log(`${id}`)
+    console.log(followingId.includes(parseInt(`${id}`)))
     event.preventDefault();
     setError(null);
     axios
@@ -56,7 +60,6 @@ export default function UserCards({ token, allUsers }) {
       .then(() => {
         // the following console.log is so that the variable error is used on the page and we stop getting warnings about unused variables so our app will deploy on Netlify
         console.log(error);
-        toggleFollowButton();
       })
       .catch((error) => {
         setError(error.message);
@@ -73,8 +76,7 @@ export default function UserCards({ token, allUsers }) {
         },
       })
       .then((res) => {
-        // console.log(res.data);
-        setUserCardList(res.data);
+        setUserCardList(res.data.results);
       });
   }, []);
 
@@ -105,10 +107,10 @@ export default function UserCards({ token, allUsers }) {
           ))}
         </div>
       </div>
-      {toggleFollow === false ? (
+      {followingId.includes(parseInt(`${id}`)) === false ? (
         <button onClick={handleFollow} className="follow-button">Follow</button>
       ) : (
-        <button onClick={handleUnfollow} className="follow-button">Don't Follow</button>
+        <button onClick={handleUnfollow} className="follow-button">Unfollow</button>
       )}
     </>
   );

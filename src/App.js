@@ -37,8 +37,8 @@ function App() {
                 },
             })
             .then((res) => {
-                console.log(res.data);
-                setMyCardList(res.data);
+                console.log(res.data.results);
+                setMyCardList(res.data.results);
             });
     }, [token, setMyCardList]);
 
@@ -50,8 +50,8 @@ function App() {
                 },
             })
             .then((res) => {
-                console.log(res.data);
-                setFollowCardList(res.data);
+                console.log(res.data.results);
+                setFollowCardList(res.data.results);
             });
     }, [token, setFollowCardList]);
 
@@ -59,8 +59,8 @@ function App() {
         axios
             .get("https://quokka-cards.herokuapp.com/cards", {})
             .then((res) => {
-                // console.log(res.data)
-                setAllCardList(res.data);
+                // console.log(res.data.results)
+                setAllCardList(res.data.results);
             });
     }, [setAllCardList]);
 
@@ -72,8 +72,8 @@ function App() {
                 },
             })
             .then((res) => {
-                console.log(res.data);
-                setFollowing(res.data);
+                console.log(res.data.results);
+                setFollowing(res.data.results);
             });
     }, [token, setFollowing]);
 
@@ -85,8 +85,8 @@ function App() {
                 },
             })
             .then((res) => {
-                console.log(res.data);
-                setFollowers(res.data);
+                console.log(res.data.results);
+                setFollowers(res.data.results);
             });
     }, [token, setFollowers]);
 
@@ -95,7 +95,7 @@ function App() {
             .get("https://quokka-cards.herokuapp.com/users/", {})
             .then((res) => {
                 // console.log('user results' + res.data)
-                setAllUsers(res.data);
+                setAllUsers(res.data.results);
             });
     }, [setAllUsers]);
 
@@ -167,6 +167,7 @@ function App() {
                             <UserCards
                                 token={token}
                                 allUsers={allUsers}
+                                following={following}
                             />
                         }
                     />
