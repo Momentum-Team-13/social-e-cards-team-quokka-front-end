@@ -1,0 +1,18 @@
+.follow-button-container{
+    margin-top: 620px;
+    margin-left: 25px;
+    position: fixed;
+}
+
+.follow-button{
+        color: rgb(65, 168, 205);
+        font-size: 10pt;
+        background-color: #ffffff;
+        border: 1px solid;
+        border-color: rgb(65, 168, 205);
+        border-radius: 3px;
+        width: 85px;
+        height: 30px;
+        position: absolute;	 
+        cursor: hand;		    
+}
