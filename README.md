@@ -1,7 +1,7 @@
 # Quokka Cards
 ## Description
 
-This is a boilerplate application to render a list in React. It was built as a project to show people who might not be familiar with the syntax in React how to create and import components, make an api call, and render a list based on that call.
+This is a card sharing web application made with React and Django Rest Framework allowing users to create, edit, delete and store customizable cards to their accounts. Users can see all cards created with the application and follow other users they enjoy the cards of. Users can retrieve lists of others cards using the follow user function as well. 
 
 ## Production Link 
 To see this application in production, please visit our Netlify site at https://quokkacards.netlify.app
