@@ -14,5 +14,5 @@
         width: 85px;
         height: 30px;
         position: absolute;	 
-        cursor: hand;		    
+        cursor: pointer; 		    
 }
