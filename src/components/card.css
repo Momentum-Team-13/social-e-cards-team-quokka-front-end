@@ -1,12 +1,13 @@
 .card {
     margin: 25px;
     width: 600px;
+    border-radius: 10px;
     /* border: 2px grey solid; */
 }
 
 .card-list-container{
     margin-left: 150px;
-    margin-top: 90px;
+    margin-top: 120px;
     display: flex;
     justify-content: center;
     /* border: 2px green solid; */
@@ -21,6 +22,7 @@
     flex-direction: column;
     /* border: 2px blue solid; */
 }
+
 .card-text {
     padding: 1.5rem;
     /* border: 4px pink solid; */

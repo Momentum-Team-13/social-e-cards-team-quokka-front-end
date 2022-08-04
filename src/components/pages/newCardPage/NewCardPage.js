@@ -213,6 +213,5 @@ export default function NewCard(token) {
       <div></div>
     </div>
   );
- 
 };
 

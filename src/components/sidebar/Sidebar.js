@@ -11,7 +11,9 @@ export default function Sidebar({ userNames, title }) {
                 <div className="sidebar-title">{title}</div>
                 <div className="sidebar-list-container">
                     <div className="search">
-                        <label className="visually-hidden">Search for a User</label>
+                        <label className="visually-hidden">
+                            Search for a User
+                        </label>
                         <input
                             placeholder="Search for a user"
                             onChange={(event) => setQuery(event.target.value)}
@@ -28,10 +30,10 @@ export default function Sidebar({ userNames, title }) {
                                 ) {
                                     return user.username;
                                 }
+                                return "";
                             })
                             .map((user) => (
                                 <div>
-                                    {/* {console.log(user)} */}
                                     <Link
                                         to={`/users/${user.id}`}
                                         className="list"

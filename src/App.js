@@ -169,6 +169,7 @@ function App() {
                                 token={token}
                                 allUsers={allUsers}
                                 following={following}
+                                setFollowing={setFollowing}
                             />
                         }
                     />

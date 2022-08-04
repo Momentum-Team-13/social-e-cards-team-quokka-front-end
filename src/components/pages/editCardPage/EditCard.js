@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from 'react-router-dom';
+import '../../card.css'
 
 
 
@@ -253,7 +254,7 @@ export default function EditCard(token) {
         </div>
         <div className="preview">
           <div className="card">
-            <div className={`card-content card-text bg-${bgColor} border-${borderColor}`}>
+            <div className={`card-content radius has-text-centered card-text bg-${bgColor} border-${borderColor}`}>
               <div className={`card-title ${fontColor} ${font}`}>{title}</div>
               <div className={`${fontColor} ${font} messageBox`}>{message}</div>
             </div>
