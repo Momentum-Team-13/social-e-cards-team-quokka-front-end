@@ -31,7 +31,7 @@ export default function Sidebar({ userNames, title }) {
                             })
                             .map((user) => (
                                 <div>
-                                    {console.log(user)}
+                                    {/* {console.log(user)} */}
                                     <Link
                                         to={`/users/${user.id}`}
                                         className="list"

@@ -38,7 +38,7 @@ function App() {
                 },
             })
             .then((res) => {
-                console.log(res.data.results);
+                // console.log(res.data.results);
                 setMyCardList(res.data.results);
             });
     }, [token, setMyCardList]);
@@ -51,7 +51,7 @@ function App() {
                 },
             })
             .then((res) => {
-                console.log(res.data.results);
+                // console.log(res.data.results);
                 setFollowCardList(res.data.results);
             });
     }, [token, setFollowCardList]);
@@ -60,7 +60,7 @@ function App() {
         axios
             .get("https://quokka-cards.herokuapp.com/cards", {})
             .then((res) => {
-                console.log(res.data.results)
+                // console.log(res.data.results)
                 setAllCardList(res.data.results);
             });
     }, [setAllCardList]);
@@ -73,7 +73,7 @@ function App() {
                 },
             })
             .then((res) => {
-                console.log(res.data.results);
+                // console.log(res.data.results);
                 setFollowing(res.data.results);
             });
     }, [token, setFollowing]);
@@ -86,7 +86,7 @@ function App() {
                 },
             })
             .then((res) => {
-                console.log(res.data.results);
+                // console.log(res.data.results);
                 setFollowers(res.data.results);
             });
     }, [token, setFollowers]);
@@ -168,6 +168,7 @@ function App() {
                             <UserCards
                                 token={token}
                                 allUsers={allUsers}
+                                following={following}
                             />
                         }
                     />
