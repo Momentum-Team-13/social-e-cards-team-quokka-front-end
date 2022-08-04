@@ -8,7 +8,7 @@ import en from "javascript-time-ago/locale/en.json";
 import ReactTimeAgo from "react-time-ago";
 TimeAgo.addDefaultLocale(en);
 
-export default function MyCards({ token, myCardList, followers, setMyCardList }) {
+export default function MyCards({ token, myCardList, followers, setMyCardList, setFollowers }) {
     const sidebarTitle = "People Who Follow Me";
     console.log(followers);
     console.log(myCardList);
@@ -26,6 +26,19 @@ export default function MyCards({ token, myCardList, followers, setMyCardList })
                 setMyCardList(res.data.results);
             });
     }, [token, setMyCardList]);
+
+    useEffect(() => {
+        axios
+            .get("https://quokka-cards.herokuapp.com/followers/", {
+                headers: {
+                    Authorization: `Token ${token}`,
+                },
+            })
+            .then((res) => {
+                // console.log(res.data.results);
+                setFollowers(res.data.results);
+            });
+    }, [token, setFollowers]);
 
 
     return (

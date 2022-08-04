@@ -29,62 +29,54 @@ function App() {
         setToken(token);
     };
 
-    useEffect(() => {
-        axios
-            .get("https://quokka-cards.herokuapp.com/cards/timeline", {
-                headers: {
-                    Authorization: `Token ${token}`,
-                },
-            })
-            .then((res) => {
-                // console.log(res.data.results);
-                setFollowCardList(res.data.results);
-            });
-    }, [token, setFollowCardList]);
+    // useEffect(() => {
+    //     axios
+    //         .get("https://quokka-cards.herokuapp.com/cards/timeline", {
+    //             headers: {
+    //                 Authorization: `Token ${token}`,
+    //             },
+    //         })
+    //         .then((res) => {
+    //             // console.log(res.data.results);
+    //             setFollowCardList(res.data.results);
+    //         });
+    // }, [token, setFollowCardList]);
+
 
     // useEffect(() => {
     //     axios
-    //         .get("https://quokka-cards.herokuapp.com/cards", {})
+    //         .get("https://quokka-cards.herokuapp.com/following/", {
+    //             headers: {
+    //                 Authorization: `Token ${token}`,
+    //             },
+    //         })
     //         .then((res) => {
-    //             // console.log(res.data.results)
-    //             setAllCardList(res.data.results);
+    //             // console.log(res.data.results);
+    //             setFollowing(res.data.results);
     //         });
-    // }, [setAllCardList]);
+    // }, [token, setFollowing]);
 
-    useEffect(() => {
-        axios
-            .get("https://quokka-cards.herokuapp.com/following/", {
-                headers: {
-                    Authorization: `Token ${token}`,
-                },
-            })
-            .then((res) => {
-                // console.log(res.data.results);
-                setFollowing(res.data.results);
-            });
-    }, [token, setFollowing]);
+    // useEffect(() => {
+    //     axios
+    //         .get("https://quokka-cards.herokuapp.com/followers/", {
+    //             headers: {
+    //                 Authorization: `Token ${token}`,
+    //             },
+    //         })
+    //         .then((res) => {
+    //             // console.log(res.data.results);
+    //             setFollowers(res.data.results);
+    //         });
+    // }, [token, setFollowers]);
 
-    useEffect(() => {
-        axios
-            .get("https://quokka-cards.herokuapp.com/followers/", {
-                headers: {
-                    Authorization: `Token ${token}`,
-                },
-            })
-            .then((res) => {
-                // console.log(res.data.results);
-                setFollowers(res.data.results);
-            });
-    }, [token, setFollowers]);
-
-    useEffect(() => {
-        axios
-            .get("https://quokka-cards.herokuapp.com/users/", {})
-            .then((res) => {
-                // console.log('user results' + res.data)
-                setAllUsers(res.data.results);
-            });
-    }, [setAllUsers]);
+    // useEffect(() => {
+    //     axios
+    //         .get("https://quokka-cards.herokuapp.com/users/", {})
+    //         .then((res) => {
+    //             // console.log('user results' + res.data)
+    //             setAllUsers(res.data.results);
+    //         });
+    // }, [setAllUsers]);
 
     const handleLogout = () => {
         // send request to log out on the server
@@ -119,6 +111,9 @@ function App() {
                         <Home
                             followCardList={followCardList}
                             following={following}
+                            token={token}
+                            setFollowCardList={setFollowCardList}
+                            setFollowing={setFollowing}
                             // handleUserCardList={handleUserCardList}
                         />
                     }
@@ -141,6 +136,7 @@ function App() {
                             myCardList={myCardList}
                             followers={followers}
                             setMyCardList={setMyCardList}
+                            setFollowers={setFollowers}
                         />
                     }
                 />

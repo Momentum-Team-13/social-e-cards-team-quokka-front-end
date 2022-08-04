@@ -17,6 +17,15 @@ export default function Explore({ allCardList, allUsers, handleUserCardList, set
             });
     }, [setAllCardList]);
 
+    useEffect(() => {
+        axios
+            .get("https://quokka-cards.herokuapp.com/users/", {})
+            .then((res) => {
+                // console.log('user results' + res.data)
+                setAllUsers(res.data.results);
+            });
+    }, [setAllUsers]);
+
     return (
         <div className="page">
             <Sidebar userNames={allUsers} title={sidebarTitle} />
