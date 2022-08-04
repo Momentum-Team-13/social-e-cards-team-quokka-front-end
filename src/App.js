@@ -13,7 +13,6 @@ import useLocalStorageState from "use-local-storage-state";
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-
 function App() {
     const [token, setToken] = useLocalStorageState("quokkaToken", null);
     const [username, setUsername] = useLocalStorageState("quokkaUsername", "");
@@ -32,19 +31,6 @@ function App() {
 
     useEffect(() => {
         axios
-            .get("https://quokka-cards.herokuapp.com/profile", {
-                headers: {
-                    Authorization: `Token ${token}`,
-                },
-            })
-            .then((res) => {
-                // console.log(res.data.results);
-                setMyCardList(res.data.results);
-            });
-    }, [token, setMyCardList]);
-
-    useEffect(() => {
-        axios
             .get("https://quokka-cards.herokuapp.com/cards/timeline", {
                 headers: {
                     Authorization: `Token ${token}`,
@@ -56,14 +42,14 @@ function App() {
             });
     }, [token, setFollowCardList]);
 
-    useEffect(() => {
-        axios
-            .get("https://quokka-cards.herokuapp.com/cards", {})
-            .then((res) => {
-                // console.log(res.data.results)
-                setAllCardList(res.data.results);
-            });
-    }, [setAllCardList]);
+    // useEffect(() => {
+    //     axios
+    //         .get("https://quokka-cards.herokuapp.com/cards", {})
+    //         .then((res) => {
+    //             // console.log(res.data.results)
+    //             setAllCardList(res.data.results);
+    //         });
+    // }, [setAllCardList]);
 
     useEffect(() => {
         axios
@@ -99,7 +85,6 @@ function App() {
                 setAllUsers(res.data.results);
             });
     }, [setAllUsers]);
-
 
     const handleLogout = () => {
         // send request to log out on the server
@@ -138,7 +123,16 @@ function App() {
                         />
                     }
                 />
-                <Route path="/newcard" element={<NewCard token={token} />} />
+                <Route
+                    path="/newcard"
+                    element={
+                        <NewCard
+                            token={token}
+                            myCardList={myCardList}
+                            setMyCardList={setMyCardList}
+                        />
+                    }
+                />
                 <Route
                     path="/mycards"
                     element={
@@ -146,6 +140,7 @@ function App() {
                             token={token}
                             myCardList={myCardList}
                             followers={followers}
+                            setMyCardList={setMyCardList}
                         />
                     }
                 />
@@ -155,6 +150,8 @@ function App() {
                         <Explore
                             allCardList={allCardList}
                             allUsers={allUsers}
+                            setAllCardList={setAllCardList}
+                            setAllUsers={setAllUsers}
                         />
                     }
                 />

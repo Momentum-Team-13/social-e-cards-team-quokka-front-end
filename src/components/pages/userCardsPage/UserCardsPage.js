@@ -21,10 +21,16 @@ export default function UserCards({
     const [error, setError] = useState(null);
     const [currentProfile, setCurrentProfile] = useState("");
 
+    const followingUsernames = []
+    following.map((user) => {
+      followingUsernames.push(user.username)
+      console.log(followingUsernames)
+    })
+
     const handleFollow = (event) => {
         console.log(`${id}`);
         // console.log(followingId.includes(parseInt(`${id}`)))
-        event.preventDefault();
+        // event.preventDefault();
         setError(null);
         axios
             .post(
@@ -53,7 +59,7 @@ export default function UserCards({
         // console.log(followingId)
         console.log(`${id}`);
         // console.log(followingId.includes(parseInt(`${id}`)))
-        event.preventDefault();
+        // event.preventDefault();
         setError(null);
         axios
             .delete(`https://quokka-cards.herokuapp.com/users/unfollow/${id}`, {
@@ -89,7 +95,7 @@ export default function UserCards({
     const sidebarTitle = "All QuokkaCards Users";
     return (
         <>
-            {following.includes(currentProfile) === false ? (
+            {followingUsernames.includes(currentProfile) === false ? (
                 <div className="follow-button-container">
                     <button className="follow-button" onClick={handleFollow}>
                         Follow
