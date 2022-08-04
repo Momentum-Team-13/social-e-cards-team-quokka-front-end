@@ -75,8 +75,8 @@ export default function NewCard(token) {
   };
 
   return (
-    <div>
-      <div className="previewBox">
+    <div className="previewBox">
+      <div className="new-card-container">
         <div className="options">
           <div className="input-field">
             <label>Title</label>

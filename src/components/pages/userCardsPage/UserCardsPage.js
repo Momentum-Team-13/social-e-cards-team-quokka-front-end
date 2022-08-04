@@ -21,8 +21,8 @@ export default function UserCards({ token, allUsers }) {
                 },
             })
             .then((res) => {
-                console.log(res.data);
-                setUserCardList(res.data);
+                console.log(res.data.results);
+                setUserCardList(res.data.results);
             });
     }, [id, token]);
 

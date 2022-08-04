@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from 'react-router-dom';
 
+
+
 export default function EditCard(token) {
   const [params] = useState(useParams());
   const [deleteBool, setDeleteBool] = useState(false)
@@ -118,8 +120,8 @@ export default function EditCard(token) {
   };
 
   return (
-    <div>
-      <div className="previewBox">
+    <div className="previewBox">
+      <div className="new-card-container">
         <div className="options">
           <div className="input-field">
             <label>Title</label>

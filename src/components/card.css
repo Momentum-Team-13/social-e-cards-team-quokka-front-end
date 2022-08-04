@@ -1,5 +1,6 @@
 .card {
     margin: 25px;
+    width: 600px;
     /* border: 2px grey solid; */
 }
 
@@ -21,7 +22,7 @@
 .card-text {
     padding: 1.5rem;
     /* border: 4px pink solid; */
-    height: 400px;
+    height: 350px;
     border-radius: 10px;
     word-break: keep-all;
 }
