@@ -2,8 +2,12 @@
     margin-top: 130px;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    border: 2px white solid;
 }
 
+.previewBox {
+    border: 2px white solid;
+}
 
 
 .preview-border{
