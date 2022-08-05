@@ -1,5 +1,4 @@
 import Sidebar from "../../sidebar/Sidebar";
-import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
@@ -9,29 +8,29 @@ import en from "javascript-time-ago/locale/en.json";
 import ReactTimeAgo from "react-time-ago";
 TimeAgo.addDefaultLocale(en);
 
-export default function UserCards({
-    token,
-    allUsers,
-    following,
-    setFollowing,
-}) {
+export default function UserCards({ token, allUsers, following }) {
     const { id } = useParams();
+
     // console.log({id})
     const [userCardList, setUserCardList] = useState([]);
     const [error, setError] = useState(null);
-    const [currentProfile, setCurrentProfile] = useState("");
+    const follow_id = parseInt(`${id}`);
 
-    const followingUsernames = []
-    following.map((user) => {
-      followingUsernames.push(user.following_username)
-      console.log(following)
-      console.log(followingUsernames)
-    })
+    const followingId = [];
+
+    useEffect(() => {
+        following.map((user) => followingId.push(user.following_id));
+    }, [following, followingId]);
+
+    const [followingArray, setFollowingArray] = useState(followingId);
+
+    console.log(followingArray);
+    console.log(follow_id);
+    console.log(followingArray.includes(follow_id));
+    console.log(followingArray.includes(`${id}`));
 
     const handleFollow = (event) => {
-        console.log(`${id}`);
-        // console.log(followingId.includes(parseInt(`${id}`)))
-        // event.preventDefault();
+        event.preventDefault();
         setError(null);
         axios
             .post(
@@ -45,10 +44,10 @@ export default function UserCards({
                     },
                 }
             )
-            .then((res) => {
+            .then(() => {
+                setFollowingArray([...followingArray, follow_id]);
+                // the following console.log is so that the variable error is used on the page and we stop getting warnings about unused variables so our app will deploy on Netlify
                 console.log(error);
-                console.log(res.data);
-                setFollowing([...following, { id }]);
             })
             .catch((error) => {
                 setError(error.message);
@@ -57,10 +56,7 @@ export default function UserCards({
     };
 
     const handleUnfollow = (event) => {
-        // console.log(followingId)
-        console.log(`${id}`);
-        // console.log(followingId.includes(parseInt(`${id}`)))
-        // event.preventDefault();
+        event.preventDefault();
         setError(null);
         axios
             .delete(`https://quokka-cards.herokuapp.com/users/unfollow/${id}`, {
@@ -69,9 +65,12 @@ export default function UserCards({
                 },
             })
             .then(() => {
+                const holdingValue = followingArray.filter(
+                    (item) => item !== follow_id
+                );
+                setFollowingArray(holdingValue);
                 // the following console.log is so that the variable error is used on the page and we stop getting warnings about unused variables so our app will deploy on Netlify
                 console.log(error);
-                // ????? do we need to call setFollowing again so the component re-renders after the button is clicked?
             })
             .catch((error) => {
                 setError(error.message);
@@ -89,15 +88,14 @@ export default function UserCards({
             })
             .then((res) => {
                 setUserCardList(res.data.results);
-                setCurrentProfile(res.data.results[0].username);
-                console.log(currentProfile);
             });
-    }, [id, token, currentProfile, setFollowing]);
+    }, [id]);
 
     const sidebarTitle = "All QuokkaCards Users";
     return (
         <>
-            {followingUsernames.includes(currentProfile) === false ? (
+            <Sidebar userNames={allUsers} title={sidebarTitle} />
+            {followingArray.includes(follow_id) === false ? (
                 <div className="follow-button-container">
                     <button className="follow-button" onClick={handleFollow}>
                         Follow
@@ -110,7 +108,6 @@ export default function UserCards({
                     </button>
                 </div>
             )}
-            <Sidebar userNames={allUsers} title={sidebarTitle} />
             <div className="card-list-container">
                 <div className="card-list">
                     {userCardList.length === 0 ? (
@@ -136,8 +133,10 @@ export default function UserCards({
                                     {card.message}
                                 </div>
                             </div>
+
                             <div className="card-footer-item">
                                 <div>{card.username}</div>
+
                                 <div className="">
                                     <ReactTimeAgo
                                         date={card.created_at}

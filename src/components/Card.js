@@ -1,7 +1,4 @@
 import { Link } from "react-router-dom";
-import { FaHeart } from "react-icons/fa";
-import { FaRegHeart } from "react-icons/fa";
-import axios from "axios";
 import TimeAgo from "javascript-time-ago";
 import en from "javascript-time-ago/locale/en.json";
 import ReactTimeAgo from "react-time-ago";

@@ -8,9 +8,11 @@ export default function LogIn({ setAuth }) {
     const [regPassword, setRegPassword] = useState();
     const [error, setError] = useState(null);
     const [registerClicked, setRegisterClicked] = useState(false);
+
     const toggleFormButton = () => {
         setRegisterClicked(!registerClicked);
     };
+
     const handleRegistration = (event) => {
         // console.log(regUsername, regPassword);
         event.preventDefault();
@@ -35,6 +37,7 @@ export default function LogIn({ setAuth }) {
                 );
             });
     };
+
     const handleSubmit = (event) => {
         console.log(username, password);
         event.preventDefault();
