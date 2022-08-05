@@ -23,7 +23,8 @@ export default function UserCards({
 
     const followingUsernames = []
     following.map((user) => {
-      followingUsernames.push(user.username)
+      followingUsernames.push(user.following_username)
+      console.log(following)
       console.log(followingUsernames)
     })
 
