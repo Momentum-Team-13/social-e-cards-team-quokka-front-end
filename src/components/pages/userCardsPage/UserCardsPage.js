@@ -8,7 +8,7 @@ import en from "javascript-time-ago/locale/en.json";
 import ReactTimeAgo from "react-time-ago";
 TimeAgo.addDefaultLocale(en);
 
-export default function UserCards({ token, allUsers, following }) {
+export default function UserCards({ token, allUsers, following, setAllUsers }) {
     const { id } = useParams();
 
     // console.log({id})
@@ -46,7 +46,6 @@ export default function UserCards({ token, allUsers, following }) {
             )
             .then(() => {
                 setFollowingArray([...followingArray, follow_id]);
-                // the following console.log is so that the variable error is used on the page and we stop getting warnings about unused variables so our app will deploy on Netlify
                 console.log(error);
             })
             .catch((error) => {
@@ -69,7 +68,6 @@ export default function UserCards({ token, allUsers, following }) {
                     (item) => item !== follow_id
                 );
                 setFollowingArray(holdingValue);
-                // the following console.log is so that the variable error is used on the page and we stop getting warnings about unused variables so our app will deploy on Netlify
                 console.log(error);
             })
             .catch((error) => {
@@ -78,7 +76,6 @@ export default function UserCards({ token, allUsers, following }) {
             });
     };
 
-    // axios request here to get user's cards
     useEffect(() => {
         axios
             .get(`https://quokka-cards.herokuapp.com/users/${id}`, {
@@ -89,7 +86,16 @@ export default function UserCards({ token, allUsers, following }) {
             .then((res) => {
                 setUserCardList(res.data.results);
             });
-    }, [id]);
+    }, [id, token]);
+
+    useEffect(() => {
+      axios
+          .get("https://quokka-cards.herokuapp.com/users/", {})
+          .then((res) => {
+              // console.log('user results' + res.data)
+              setAllUsers(res.data.results);
+          });
+  }, [setAllUsers]);
 
     const sidebarTitle = "All QuokkaCards Users";
     return (
