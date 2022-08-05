@@ -114,7 +114,6 @@ function App() {
                             token={token}
                             setFollowCardList={setFollowCardList}
                             setFollowing={setFollowing}
-                            // handleUserCardList={handleUserCardList}
                         />
                     }
                 />
@@ -163,6 +162,7 @@ function App() {
                                 allUsers={allUsers}
                                 following={following}
                                 setFollowing={setFollowing}
+                                setAllUsers={setAllUsers}
                             />
                         }
                     />
